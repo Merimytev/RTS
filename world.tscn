@@ -32,13 +32,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nmrsi")
 [node name="Units" type="Node2D" parent="."]
 
 [node name="Unit" parent="Units" groups=["units"] instance=ExtResource("2_gs7jo")]
-position = Vector2(104, 105)
+position = Vector2(117, 122)
 
 [node name="Unit2" parent="Units" groups=["units"] instance=ExtResource("2_gs7jo")]
 position = Vector2(404, 130)
 
 [node name="Unit3" parent="Units" groups=["units"] instance=ExtResource("2_gs7jo")]
-position = Vector2(163, 228)
+position = Vector2(91, 241)
 
 [node name="Unit4" parent="Units" groups=["units"] instance=ExtResource("2_gs7jo")]
 position = Vector2(347, 283)
