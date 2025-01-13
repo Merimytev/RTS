@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba4xo2wc3tc1h"
-path="res://.godot/imported/scifiUnit_11.png-7d629c3a874d396501598be2774e8940.ctex"
+uid="uid://c4b5r8wm57trs"
+path="res://.godot/imported/Mineral.png-13fcff22504bb27fe61a55f4ca96972c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/scifiUnit_11.png"
-dest_files=["res://.godot/imported/scifiUnit_11.png-7d629c3a874d396501598be2774e8940.ctex"]
+source_file="res://World objects/Mineral.png"
+dest_files=["res://.godot/imported/Mineral.png-13fcff22504bb27fe61a55f4ca96972c.ctex"]
 
 [params]
 
