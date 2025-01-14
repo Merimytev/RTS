@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://01hq333aoves"]
+[gd_scene load_steps=5 format=3 uid="uid://01hq333aoves"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_to03m"]
+[ext_resource type="Texture2D" uid="uid://83sphaxq5hdn" path="res://img/Energy.png" id="2_7qcg3"]
+[ext_resource type="Texture2D" uid="uid://c4snjogj1axjo" path="res://img/Crystal.png" id="3_0je8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmrsi"]
 bg_color = Color(0.219608, 0.219608, 0.219608, 0.501961)
@@ -20,6 +22,23 @@ script = ExtResource("1_to03m")
 [node name="Panel" type="Panel" parent="."]
 theme_override_styles/panel = SubResource("StyleBoxFlat_nmrsi")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
+[node name="Minerals" type="Label" parent="."]
+offset_left = 6.0
+offset_right = 46.0
 offset_bottom = 23.0
+
+[node name="MineralsPNG" type="Sprite2D" parent="Minerals"]
+position = Vector2(100, 39)
+scale = Vector2(0.0506592, 0.0506592)
+texture = ExtResource("3_0je8x")
+
+[node name="Energy" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 23.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="EnergyPNG" type="Sprite2D" parent="Energy"]
+position = Vector2(100, -10)
+scale = Vector2(0.0476074, 0.0476074)
+texture = ExtResource("2_7qcg3")

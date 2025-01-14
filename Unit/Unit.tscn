@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://p3snma5hv5o2"]
 
-[ext_resource type="Texture2D" uid="uid://ba4xo2wc3tc1h" path="res://Unit/Builder.png" id="1_huh8k"]
+[ext_resource type="Texture2D" uid="uid://ba4xo2wc3tc1h" path="res://img/Builder.png" id="1_huh8k"]
 [ext_resource type="Script" path="res://Unit/unit.gd" id="1_ry2w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov13o"]
@@ -15,7 +15,7 @@ border_width_bottom = 2
 border_color = Color(1.2514e-06, 0.714743, 0.68394, 1)
 border_blend = true
 
-[node name="Unit" type="CharacterBody2D" groups=["units"]]
+[node name="Unit" type="CharacterBody2D"]
 script = ExtResource("1_ry2w2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
