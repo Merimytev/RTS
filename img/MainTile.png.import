@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4b5r8wm57trs"
-path="res://.godot/imported/Mineral.png-13fcff22504bb27fe61a55f4ca96972c.ctex"
+uid="uid://dupgkjwewdblv"
+path="res://.godot/imported/MainTile.png-6c7f0f179904380d1b5552612a693106.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World objects/Mineral.png"
-dest_files=["res://.godot/imported/Mineral.png-13fcff22504bb27fe61a55f4ca96972c.ctex"]
+source_file="res://img/MainTile.png"
+dest_files=["res://.godot/imported/MainTile.png-6c7f0f179904380d1b5552612a693106.ctex"]
 
 [params]
 

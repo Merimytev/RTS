@@ -7,10 +7,11 @@ extends CharacterBody2D
 
 @onready var target = position
 var follow_cursor = false
-var Speed = 50
+var Speed = 80
 
 func _ready():
 	set_selected(selected)
+	add_to_group("units", true)
 
 func set_selected(value):
 	selected = value

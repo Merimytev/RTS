@@ -24,7 +24,7 @@ func _process(delta):
 
 
 func _on_mine_area_body_entered(body: Node2D) -> void:
-	if "Unit" in body.name:
+	if body.is_in_group("units"):
 		units += 1
 		startMining()
 		
