@@ -14,13 +14,16 @@ y_sort_enabled = true
 script = ExtResource("1_1m6ml")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1198.0
-offset_bottom = 682.0
+offset_left = -6924.0
+offset_top = -3179.0
+offset_right = 9293.0
+offset_bottom = 5230.0
 texture = ExtResource("3_fa184")
 stretch_mode = 1
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(230, 150)
+anchor_mode = 0
 script = ExtResource("1_mov7x")
 
 [node name="UI" parent="." instance=ExtResource("5_3c34y")]
