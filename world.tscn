@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl5sweqpos2k8"]
+[gd_scene load_steps=11 format=3 uid="uid://cl5sweqpos2k8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_1m6ml"]
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_mov7x"]
@@ -9,21 +9,46 @@
 [ext_resource type="PackedScene" uid="uid://bf3b4l314uo5" path="res://Buildings/Factory.tscn" id="7_5pqsd"]
 [ext_resource type="PackedScene" uid="uid://bvgpipxsk31dx" path="res://Buildings/SolarPanel.tscn" id="7_gu6r7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dybu8"]
+size = Vector2(4440, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4boj"]
+size = Vector2(2346.5, 9.99561)
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1m6ml")
 
+[node name="WorldCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision"]
+position = Vector2(325, -671.5)
+shape = SubResource("RectangleShape2D_dybu8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldCollision"]
+position = Vector2(-1910, 507.75)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_a4boj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldCollision"]
+position = Vector2(325, 1659)
+shape = SubResource("RectangleShape2D_dybu8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldCollision"]
+position = Vector2(2542, 507.75)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_a4boj")
+
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -6924.0
-offset_top = -3179.0
-offset_right = 9293.0
-offset_bottom = 5230.0
+offset_left = -6786.0
+offset_top = -3478.0
+offset_right = 9431.0
+offset_bottom = 4931.0
 texture = ExtResource("3_fa184")
 stretch_mode = 1
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(230, 150)
-anchor_mode = 0
 script = ExtResource("1_mov7x")
 
 [node name="UI" parent="." instance=ExtResource("5_3c34y")]
