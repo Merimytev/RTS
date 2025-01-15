@@ -24,3 +24,27 @@ script = ExtResource("1_17cw4")
 offset_right = 145.0
 offset_bottom = 86.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nmrsi")
+<<<<<<< Updated upstream
+=======
+
+[node name="Minerals" type="Label" parent="."]
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+
+[node name="MineralsPNG" type="Sprite2D" parent="Minerals"]
+position = Vector2(100, 13)
+scale = Vector2(0.0506592, 0.0506592)
+texture = ExtResource("3_0je8x")
+
+[node name="Energy" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 23.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="EnergyPNG" type="Sprite2D" parent="Energy"]
+position = Vector2(100, 15)
+scale = Vector2(0.0476074, 0.0476074)
+texture = ExtResource("2_7qcg3")
+>>>>>>> Stashed changes
