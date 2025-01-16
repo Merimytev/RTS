@@ -69,13 +69,13 @@ text = "Атакует вражеских юнитов"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Create" type="Button" parent="."]
+[node name="CreateBuilder" type="Button" parent="."]
 offset_left = 320.0
 offset_top = 192.0
 offset_right = 384.0
 offset_bottom = 256.0
 
-[node name="Create2" type="Button" parent="."]
+[node name="CreateSoldier" type="Button" parent="."]
 offset_left = 576.0
 offset_top = 192.0
 offset_right = 640.0
@@ -99,6 +99,6 @@ position = Vector2(608, 224)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("4_waq04")
 
-[connection signal="pressed" from="Create" to="." method="_on_create_pressed"]
-[connection signal="pressed" from="Create2" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="CreateBuilder" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="CreateSoldier" to="." method="_on_create_pressed"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

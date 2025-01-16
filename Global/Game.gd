@@ -2,9 +2,15 @@ extends Node
 
 @onready var spawn = preload("res://Global/spawn_unit.tscn")
 
-var Mineral = 0
+var Minerals = 0
 var Energy = 0
 
+var database : SQLite
+
+func reset_resources():
+	Minerals = 0
+	Energy = 0
+	print("Ресурсы сброшены")
 
 func spawnUnit(position):
 	var path = get_tree().get_root().get_node("World/UI")

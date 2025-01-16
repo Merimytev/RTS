@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="RTS"
-run/main_scene="res://world.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
 Game="*res://Global/Game.gd"
+MenuScene="*res://MainMenu.tscn"
+MenuCode="*res://Global/Menu.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 
 [input]
 

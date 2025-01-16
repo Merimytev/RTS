@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl4yv5hb4cvx4"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_ewhjs"]
+[ext_resource type="Texture2D" uid="uid://8gaub7jwc4im" path="res://img/Menu.png" id="2_4wlxm"]
+[ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="3_ok6xu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxyca"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb7xj"]
+bg_color = Color(0.821789, 0.821789, 0.821788, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6st60"]
+bg_color = Color(0.758192, 0.758192, 0.758191, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpjqm"]
+bg_color = Color(0.74978, 0.74978, 0.74978, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Main Menu" type="Node2D"]
+position = Vector2(262, 0)
+script = ExtResource("1_ewhjs")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(317.5, 322.5)
+scale = Vector2(1.25817, 1.4482)
+texture = ExtResource("2_4wlxm")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 218.0
+offset_top = 216.0
+offset_right = 410.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("3_ok6xu")
+theme_override_font_sizes/font_size = 40
+text = "RTS game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 90.0
+offset_top = 320.0
+offset_right = 385.0
+offset_bottom = 518.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_ok6xu")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
+text = "Играть"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Statistics")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_ok6xu")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
+text = "Настройки
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Statistics" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Quit")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_ok6xu")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
+text = "Статистика"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Statistics")
+focus_neighbor_bottom = NodePath("../Play")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_ok6xu")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
+text = "Выйти"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Statistics" to="." method="_on_statistics_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

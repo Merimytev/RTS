@@ -1,43 +1,40 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl5sweqpos2k8"]
+[gd_scene load_steps=20 format=3 uid="uid://cl5sweqpos2k8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_1m6ml"]
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_mov7x"]
+[ext_resource type="Texture2D" uid="uid://dgwblxbp3q4pv" path="res://img/River2.png" id="2_232ut"]
 [ext_resource type="PackedScene" uid="uid://p3snma5hv5o2" path="res://Unit/Unit.tscn" id="2_gs7jo"]
+[ext_resource type="Texture2D" uid="uid://j77p2nlw752i" path="res://img/River1.png" id="3_dhi2s"]
 [ext_resource type="Texture2D" uid="uid://dupgkjwewdblv" path="res://img/MainTile.png" id="3_fa184"]
 [ext_resource type="PackedScene" uid="uid://ch3mbfpk7bfqu" path="res://World objects/Mineral.tscn" id="4_hkw35"]
 [ext_resource type="PackedScene" uid="uid://01hq333aoves" path="res://UI/UI.tscn" id="5_3c34y"]
 [ext_resource type="PackedScene" uid="uid://bf3b4l314uo5" path="res://Buildings/Factory.tscn" id="7_5pqsd"]
 [ext_resource type="PackedScene" uid="uid://bvgpipxsk31dx" path="res://Buildings/SolarPanel.tscn" id="7_gu6r7"]
+[ext_resource type="AudioStream" uid="uid://bdv0sh2ekso8v" path="res://Audio/OSTDynamic.wav" id="9_f3u6j"]
+[ext_resource type="AudioStream" uid="uid://cewmalrtas051" path="res://Audio/OSTAmbient.wav" id="10_wwedx"]
+[ext_resource type="Texture2D" uid="uid://cf8jgcmh3a613" path="res://img/Tree1.png" id="11_biudx"]
+[ext_resource type="Texture2D" uid="uid://c5p3kc83yhxy2" path="res://img/Tree2.png" id="12_xcoiw"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_78cb2"]
+stream_count = 2
+stream_0 = ExtResource("9_f3u6j")
+stream_1 = ExtResource("10_wwedx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k445p"]
+size = Vector2(20, 27.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdxx"]
+size = Vector2(20.5, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dybu8"]
-size = Vector2(4440, 1)
+size = Vector2(4452, 2.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4boj"]
-size = Vector2(2346.5, 9.99561)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyxum"]
+size = Vector2(4, 1900)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1m6ml")
-
-[node name="WorldCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision"]
-position = Vector2(325, -671.5)
-shape = SubResource("RectangleShape2D_dybu8")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldCollision"]
-position = Vector2(-1910, 507.75)
-rotation = -1.57079
-shape = SubResource("RectangleShape2D_a4boj")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldCollision"]
-position = Vector2(325, 1659)
-shape = SubResource("RectangleShape2D_dybu8")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldCollision"]
-position = Vector2(2542, 507.75)
-rotation = -1.57079
-shape = SubResource("RectangleShape2D_a4boj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -6786.0
@@ -85,3 +82,237 @@ position = Vector2(444, 150)
 
 [node name="Factory2" parent="Buildings" instance=ExtResource("7_5pqsd")]
 position = Vector2(931, 150)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-93, 207)
+stream = SubResource("AudioStreamPlaylist_78cb2")
+autoplay = true
+bus = &"Music"
+
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-93, 294)
+scale = Vector2(2, 2)
+
+[node name="Tree1" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-48, 84)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree1"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree1"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree3" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-69.5, 102.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree3"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree3"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree2" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-85, 75.5)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree2"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree2"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree14" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-104, -229.5)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree14"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree14"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree15" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-130.5, -351.5)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree15"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree15"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree4" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(579.5, -184)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree4"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree4"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree5" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(561, -222.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree5"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree5"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree7" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-88.5, -326)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree7"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree7"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree10" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-88.5, -326)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree10"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree10"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree11" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-114, -305.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree11"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree11"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree12" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-68, -303.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree12"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree12"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree8" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-135.5, -247.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree8"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree8"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree13" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-135.5, -247.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree13"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree13"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree9" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-146, -308)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree9"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree9"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree6" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(553.5, -191.5)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree6"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree6"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="WorldCollision" type="Node2D" parent="."]
+
+[node name="River" type="StaticBody2D" parent="WorldCollision"]
+
+[node name="RiverTile" type="TextureRect" parent="WorldCollision/River"]
+offset_left = -1901.0
+offset_top = -718.0
+offset_right = 2542.0
+offset_bottom = -654.0
+texture = ExtResource("2_232ut")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/River"]
+position = Vector2(325, -671.5)
+shape = SubResource("RectangleShape2D_dybu8")
+
+[node name="River2" type="StaticBody2D" parent="WorldCollision"]
+
+[node name="RiverTile" type="TextureRect" parent="WorldCollision/River2"]
+offset_left = -1953.0
+offset_top = -671.0
+offset_right = -1889.0
+offset_bottom = 1226.0
+texture = ExtResource("3_dhi2s")
+stretch_mode = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldCollision/River2"]
+position = Vector2(-1905.5, 278)
+shape = SubResource("RectangleShape2D_oyxum")
+
+[node name="River3" type="StaticBody2D" parent="WorldCollision"]
+
+[node name="RiverTile" type="TextureRect" parent="WorldCollision/River3"]
+offset_left = -1905.0
+offset_top = 1212.0
+offset_right = 2542.0
+offset_bottom = 1276.0
+texture = ExtResource("2_232ut")
+stretch_mode = 1
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldCollision/River3"]
+position = Vector2(319, 1226.75)
+shape = SubResource("RectangleShape2D_dybu8")
+
+[node name="River4" type="StaticBody2D" parent="WorldCollision"]
+
+[node name="RiverTile" type="TextureRect" parent="WorldCollision/River4"]
+offset_left = 2525.0
+offset_top = -671.0
+offset_right = 2589.0
+offset_bottom = 1226.0
+texture = ExtResource("3_dhi2s")
+stretch_mode = 1
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldCollision/River4"]
+position = Vector2(2543, 278)
+shape = SubResource("RectangleShape2D_oyxum")

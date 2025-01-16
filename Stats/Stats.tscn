@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6g33e850jyog"]
+
+[ext_resource type="Texture2D" uid="uid://8gaub7jwc4im" path="res://img/Menu.png" id="1_eb5uj"]
+[ext_resource type="Script" path="res://Stats/Stats.gd" id="1_wudi1"]
+[ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="2_o1310"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx2jq"]
+bg_color = Color(0.821789, 0.821789, 0.821788, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5uru"]
+bg_color = Color(0.758192, 0.758192, 0.758191, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3w0ow"]
+bg_color = Color(0.74978, 0.74978, 0.74978, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Stats" type="Node2D"]
+script = ExtResource("1_wudi1")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(579.5, 322.5)
+scale = Vector2(1.25817, 1.4482)
+texture = ExtResource("1_eb5uj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 159.0
+offset_right = 793.0
+offset_bottom = 203.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+text = "Статистика игрока
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 232.5
+offset_right = 793.0
+offset_bottom = 276.5
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+text = "Добыто минералов:
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 306.0
+offset_right = 793.0
+offset_bottom = 350.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+text = "Произведено энергии:"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 379.5
+offset_right = 793.0
+offset_bottom = 423.5
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+text = "Времени за игрой:"
+
+[node name="SQL1" type="Label" parent="."]
+offset_left = 706.0
+offset_top = 231.0
+offset_right = 848.0
+offset_bottom = 275.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+text = "Sql"
+
+[node name="SQL2" type="Label" parent="."]
+offset_left = 707.0
+offset_top = 306.0
+offset_right = 840.0
+offset_bottom = 350.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+text = "Sql"
+
+[node name="SQL3" type="Label" parent="."]
+offset_left = 668.0
+offset_top = 380.0
+offset_right = 816.0
+offset_bottom = 424.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+text = "Sql"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 360.0
+offset_top = 453.0
+offset_right = 793.0
+offset_bottom = 497.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_bx2jq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o5uru")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3w0ow")
+text = "Назад"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

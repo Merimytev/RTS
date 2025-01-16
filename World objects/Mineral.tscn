@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ch3mbfpk7bfqu"]
 
 [ext_resource type="Script" path="res://World objects/Mineral.gd" id="1_y03pr"]
-[ext_resource type="Texture2D" uid="uid://c4b5r8wm57trs" path="res://img/Mineral.png" id="2_l7fxg"]
+[ext_resource type="Texture2D" uid="uid://vhkpsdkaih5p" path="res://img/Mineral.png" id="2_l7fxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qehij"]
-size = Vector2(44, 34.75)
+size = Vector2(44, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7oxd1"]
 radius = 31.0
@@ -40,7 +40,7 @@ scale = Vector2(1.11621, 1.11621)
 texture = ExtResource("2_l7fxg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3.625)
+position = Vector2(2, 5)
 shape = SubResource("RectangleShape2D_qehij")
 
 [node name="MineArea" type="Area2D" parent="."]

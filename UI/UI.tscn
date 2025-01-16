@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://01hq333aoves"]
+[gd_scene load_steps=10 format=3 uid="uid://01hq333aoves"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_to03m"]
 [ext_resource type="Texture2D" uid="uid://83sphaxq5hdn" path="res://img/Energy.png" id="2_7qcg3"]
-[ext_resource type="Texture2D" uid="uid://c4snjogj1axjo" path="res://img/Crystal.png" id="3_0je8x"]
+[ext_resource type="Texture2D" uid="uid://vhkpsdkaih5p" path="res://img/Mineral.png" id="2_tssxm"]
+[ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="4_mquok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmrsi"]
 bg_color = Color(0.219608, 0.219608, 0.219608, 0.501961)
@@ -16,6 +17,29 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxyca"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb7xj"]
+bg_color = Color(0.821789, 0.821789, 0.821788, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6st60"]
+bg_color = Color(0.758192, 0.758192, 0.758191, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpjqm"]
+bg_color = Color(0.74978, 0.74978, 0.74978, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_to03m")
 
@@ -28,17 +52,46 @@ offset_right = 46.0
 offset_bottom = 23.0
 
 [node name="MineralsPNG" type="Sprite2D" parent="Minerals"]
-position = Vector2(100, 39)
-scale = Vector2(0.0506592, 0.0506592)
-texture = ExtResource("3_0je8x")
+position = Vector2(106, 13)
+scale = Vector2(0.589171, 0.589171)
+texture = ExtResource("2_tssxm")
 
 [node name="Energy" type="Label" parent="."]
 offset_left = 6.0
-offset_top = 23.0
+offset_top = 32.0
 offset_right = 46.0
-offset_bottom = 46.0
+offset_bottom = 55.0
 
 [node name="EnergyPNG" type="Sprite2D" parent="Energy"]
-position = Vector2(100, -10)
+position = Vector2(106, 13)
 scale = Vector2(0.0476074, 0.0476074)
 texture = ExtResource("2_7qcg3")
+
+[node name="Menu" type="Panel" parent="."]
+offset_left = 520.0
+offset_top = 8.0
+offset_right = 632.0
+offset_bottom = 56.0
+
+[node name="Menu" type="Button" parent="Menu"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -16.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_mquok")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
+text = "Меню"
+
+[connection signal="pressed" from="Menu/Menu" to="." method="_on_menu_pressed"]
