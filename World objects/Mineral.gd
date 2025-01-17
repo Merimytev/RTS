@@ -46,5 +46,5 @@ func startMining():
 	
 	
 func mineralMined():
-	Game.Mineral += 1
+	Game.Minerals += 1
 	queue_free()

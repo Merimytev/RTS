@@ -87,6 +87,7 @@ position = Vector2(931, 150)
 position = Vector2(-93, 207)
 stream = SubResource("AudioStreamPlaylist_78cb2")
 autoplay = true
+max_distance = 4430.0
 bus = &"Music"
 
 [node name="Trees" type="Node2D" parent="."]
