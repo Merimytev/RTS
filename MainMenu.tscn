@@ -54,23 +54,17 @@ text = "RTS game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 90.0
-offset_top = 320.0
-offset_right = 385.0
-offset_bottom = 518.0
-scale = Vector2(1.5, 1.5)
-theme_override_constants/separation = 12
-alignment = 1
-
-[node name="Play" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Play" type="Button" parent="."]
+offset_left = 162.0
+offset_top = 344.0
+offset_right = 466.0
+offset_bottom = 386.0
 focus_neighbor_top = NodePath("../Quit")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
@@ -78,14 +72,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
 text = "Играть"
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Settings" type="Button" parent="."]
+offset_left = 162.0
+offset_top = 407.0
+offset_right = 466.0
+offset_bottom = 449.0
 focus_neighbor_bottom = NodePath("../Statistics")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
@@ -94,15 +91,18 @@ text = "Настройки
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Statistics" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Statistics" type="Button" parent="."]
+offset_left = 162.0
+offset_top = 470.0
+offset_right = 466.0
+offset_bottom = 512.0
 focus_neighbor_top = NodePath("../Settings")
 focus_neighbor_bottom = NodePath("../Quit")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
@@ -110,15 +110,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
 text = "Статистика"
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Quit" type="Button" parent="."]
+offset_left = 162.0
+offset_top = 533.0
+offset_right = 466.0
+offset_bottom = 575.0
 focus_neighbor_top = NodePath("../Statistics")
 focus_neighbor_bottom = NodePath("../Play")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vxyca")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rb7xj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6st60")
@@ -126,7 +129,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tpjqm")
 text = "Выйти"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Statistics" to="." method="_on_statistics_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Statistics" to="." method="_on_statistics_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -5,11 +5,26 @@
 [ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="3_441ya"]
 [ext_resource type="Script" path="res://VolumeSlider.gd" id="4_6ih2q"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tajvg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylm2q"]
+bg_color = Color(0.821789, 0.821789, 0.821788, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mn5fl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2pij"]
+bg_color = Color(0.758192, 0.758192, 0.758191, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxixn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp2u7"]
+bg_color = Color(0.74978, 0.74978, 0.74978, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="SettingsMenu" type="Node2D"]
 position = Vector2(262, 0)
@@ -28,7 +43,7 @@ offset_bottom = 359.0
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 16
+theme_override_constants/separation = 56
 alignment = 1
 
 [node name="Volume" type="Label" parent="VBoxContainer"]
@@ -55,9 +70,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_441ya")
 theme_override_font_sizes/font_size = 22
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tajvg")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mn5fl")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_pxixn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ylm2q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s2pij")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mp2u7")
 text = "Назад"
 metadata/_edit_use_anchors_ = true
 

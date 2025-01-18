@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-
-
 var totalTime = 5
 var currTime
 var units = 0
@@ -9,12 +7,9 @@ var units = 0
 @onready var timer = $Timer
 
 
-
-
 func _ready():
 	currTime = totalTime
 	bar.max_value = totalTime
-
 
 
 func _process(delta):

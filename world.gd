@@ -1,14 +1,16 @@
 extends Node2D
 
 var units = []
+var total_elapsed_time = 0.0
+
+func _process(delta: float) -> void:
+	total_elapsed_time += delta
 
 func _ready():
 	get_units()
 
 func get_units():
-	units = null
 	units = get_tree().get_nodes_in_group("units")
-
 
 func _on_area_selected(object):
 	var start = object.start
@@ -22,7 +24,6 @@ func _on_area_selected(object):
 	for u in ut:
 		u.set_selected(!u.selected)
 
-
 func get_units_in_area(area):
 	var u = []
 	for unit in units:
@@ -30,3 +31,6 @@ func get_units_in_area(area):
 			if unit.position.y > area[0].y and unit.position.y < area[1].y:
 				u.append(unit)
 	return u
+
+func get_elapsed_time() -> float:
+	return total_elapsed_time

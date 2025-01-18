@@ -35,22 +35,23 @@ texture = ExtResource("1_eb5uj")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 360.0
-offset_top = 159.0
+offset_top = 72.0
 offset_right = 793.0
-offset_bottom = 203.0
+offset_bottom = 171.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
-theme_override_font_sizes/font_size = 30
-text = "Статистика игрока
+theme_override_font_sizes/font_size = 34
+text = "Статистика последнего игрока
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 360.0
-offset_top = 232.5
+offset_top = 264.0
 offset_right = 793.0
-offset_bottom = 276.5
+offset_bottom = 308.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30
@@ -59,9 +60,9 @@ text = "Добыто минералов:
 
 [node name="Label3" type="Label" parent="."]
 offset_left = 360.0
-offset_top = 306.0
+offset_top = 337.5
 offset_right = 793.0
-offset_bottom = 350.0
+offset_bottom = 381.5
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30
@@ -69,49 +70,65 @@ text = "Произведено энергии:"
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 360.0
-offset_top = 379.5
+offset_top = 411.0
 offset_right = 793.0
-offset_bottom = 423.5
+offset_bottom = 455.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30
 text = "Времени за игрой:"
 
-[node name="SQL1" type="Label" parent="."]
-offset_left = 706.0
-offset_top = 231.0
-offset_right = 848.0
-offset_bottom = 275.0
+[node name="Label5" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 200.0
+offset_right = 793.0
+offset_bottom = 244.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30
-text = "Sql"
+text = "ID игрока:"
 
-[node name="SQL2" type="Label" parent="."]
-offset_left = 707.0
-offset_top = 306.0
-offset_right = 840.0
-offset_bottom = 350.0
+[node name="ID" type="Label" parent="."]
+offset_left = 544.0
+offset_top = 200.0
+offset_right = 640.0
+offset_bottom = 244.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30
-text = "Sql"
 
-[node name="SQL3" type="Label" parent="."]
-offset_left = 668.0
-offset_top = 380.0
-offset_right = 816.0
-offset_bottom = 424.0
+[node name="Minerals" type="Label" parent="."]
+offset_left = 672.0
+offset_top = 264.0
+offset_right = 814.0
+offset_bottom = 308.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30
-text = "Sql"
+
+[node name="Energy" type="Label" parent="."]
+offset_left = 704.0
+offset_top = 336.0
+offset_right = 837.0
+offset_bottom = 380.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
+
+[node name="Time" type="Label" parent="."]
+offset_left = 664.0
+offset_top = 408.0
+offset_right = 812.0
+offset_bottom = 452.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_o1310")
+theme_override_font_sizes/font_size = 30
 
 [node name="Back" type="Button" parent="."]
 offset_left = 360.0
-offset_top = 453.0
+offset_top = 504.0
 offset_right = 793.0
-offset_bottom = 497.0
+offset_bottom = 548.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8

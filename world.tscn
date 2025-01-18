@@ -37,15 +37,19 @@ y_sort_enabled = true
 script = ExtResource("1_1m6ml")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -6786.0
-offset_top = -3478.0
-offset_right = 9431.0
-offset_bottom = 4931.0
+offset_left = -6764.0
+offset_top = -3485.0
+offset_right = 9453.0
+offset_bottom = 4924.0
 texture = ExtResource("3_fa184")
 stretch_mode = 1
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(230, 150)
+limit_left = -2200
+limit_top = -820
+limit_right = 3000
+limit_bottom = 1600
 script = ExtResource("1_mov7x")
 
 [node name="UI" parent="." instance=ExtResource("5_3c34y")]
@@ -62,6 +66,21 @@ y_sort_enabled = true
 [node name="Mineral" parent="Objects" instance=ExtResource("4_hkw35")]
 position = Vector2(107, 150)
 
+[node name="Mineral5" parent="Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(-335, 310)
+
+[node name="Mineral6" parent="Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(-25, 469)
+
+[node name="Mineral7" parent="Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(-511, 624)
+
+[node name="Mineral8" parent="Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(-632, 287)
+
+[node name="Mineral9" parent="Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(-456, 461)
+
 [node name="Mineral2" parent="Objects" instance=ExtResource("4_hkw35")]
 position = Vector2(173, 588)
 
@@ -74,14 +93,17 @@ position = Vector2(368, 458)
 [node name="SolarPanel" parent="Objects" instance=ExtResource("7_gu6r7")]
 position = Vector2(671, 269)
 
+[node name="SolarPanel2" parent="Objects" instance=ExtResource("7_gu6r7")]
+position = Vector2(-1387, 45)
+
 [node name="Buildings" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Factory" parent="Buildings" instance=ExtResource("7_5pqsd")]
-position = Vector2(444, 150)
+position = Vector2(502, 114)
 
 [node name="Factory2" parent="Buildings" instance=ExtResource("7_5pqsd")]
-position = Vector2(931, 150)
+position = Vector2(-1218, -106)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-93, 207)
@@ -106,6 +128,50 @@ texture = ExtResource("11_biudx")
 position = Vector2(0, 5.75)
 shape = SubResource("RectangleShape2D_k445p")
 
+[node name="Tree16" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-315.5, 149)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree16"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree16"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree22" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-327.5, 102)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree22"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree22"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree23" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-354.5, 174.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree23"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree23"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree21" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-396.5, 117.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree21"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree21"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
 [node name="Tree3" type="StaticBody2D" parent="Trees"]
 y_sort_enabled = true
 position = Vector2(-69.5, 102.5)
@@ -125,6 +191,50 @@ position = Vector2(-85, 75.5)
 texture = ExtResource("12_xcoiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree2"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree17" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-355.5, 126)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree17"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree17"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree18" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-173.5, -244)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree18"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree18"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree19" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-276, 139)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree19"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree19"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree20" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(-391.5, 162)
+
+[node name="Tree2" type="Sprite2D" parent="Trees/Tree20"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree20"]
 position = Vector2(3.25, 7)
 shape = SubResource("RectangleShape2D_mxdxx")
 
@@ -169,6 +279,39 @@ position = Vector2(561, -222.5)
 texture = ExtResource("11_biudx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree5"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree24" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(635.5, -190.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree24"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree24"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree26" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(583.5, -256.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree26"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree26"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree25" type="StaticBody2D" parent="Trees"]
+y_sort_enabled = true
+position = Vector2(616.5, -220.5)
+
+[node name="Tree1" type="Sprite2D" parent="Trees/Tree25"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree25"]
 position = Vector2(0, 5.75)
 shape = SubResource("RectangleShape2D_k445p")
 
@@ -317,3 +460,5 @@ stretch_mode = 1
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldCollision/River4"]
 position = Vector2(2543, 278)
 shape = SubResource("RectangleShape2D_oyxum")
+
+[node name="Timer" type="Timer" parent="."]

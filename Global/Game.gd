@@ -4,13 +4,13 @@ extends Node
 
 var Minerals = 0
 var Energy = 0
-
-var database : SQLite
+var TimePlayed = 0.0
 
 func reset_resources():
 	Minerals = 0
 	Energy = 0
-	print("Ресурсы сброшены")
+	TimePlayed = 0.0
+	print("Ресурсы и время сброшены")
 
 func spawnUnit(position):
 	var path = get_tree().get_root().get_node("World/UI")

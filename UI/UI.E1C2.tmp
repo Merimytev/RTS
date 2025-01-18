@@ -47,29 +47,23 @@ script = ExtResource("1_to03m")
 theme_override_styles/panel = SubResource("StyleBoxFlat_nmrsi")
 
 [node name="Minerals" type="Label" parent="."]
-offset_left = 34.0
-offset_right = 74.0
-offset_bottom = 24.0
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("4_mquok")
-text = "test"
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
 
 [node name="MineralsPNG" type="Sprite2D" parent="Minerals"]
-position = Vector2(-18, 13)
+position = Vector2(106, 13)
 scale = Vector2(0.589171, 0.589171)
 texture = ExtResource("2_tssxm")
 
 [node name="Energy" type="Label" parent="."]
-offset_left = 34.0
+offset_left = 6.0
 offset_top = 32.0
-offset_right = 74.0
-offset_bottom = 56.0
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("4_mquok")
-text = "test"
+offset_right = 46.0
+offset_bottom = 55.0
 
 [node name="EnergyPNG" type="Sprite2D" parent="Energy"]
-position = Vector2(-17, 13)
+position = Vector2(106, 13)
 scale = Vector2(0.0476074, 0.0476074)
 texture = ExtResource("2_7qcg3")
 
