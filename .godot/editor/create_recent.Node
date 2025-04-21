@@ -1,0 +1,15 @@
+TileMapLayer
+Timer
+Label
+Node2D
+TextureRect
+StaticBody2D
+TextEdit
+Sprite2D
+CollisionShape2D
+Button
+Panel
+HSlider
+VBoxContainer
+AudioStreamPlayer2D
+MenuButton
