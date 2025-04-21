@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ch3mbfpk7bfqu"]
 
-[ext_resource type="Script" uid="uid://7375n57ud2g8" path="res://World objects/Mineral.gd" id="1_y03pr"]
+[ext_resource type="Script" path="res://World objects/Mineral.gd" id="1_y03pr"]
 [ext_resource type="Texture2D" uid="uid://vhkpsdkaih5p" path="res://img/Mineral.png" id="2_l7fxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qehij"]
