@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch3mbfpk7bfqu"]
+
+[ext_resource type="Script" uid="uid://7375n57ud2g8" path="res://World objects/Mineral.gd" id="1_y03pr"]
+[ext_resource type="Texture2D" uid="uid://vhkpsdkaih5p" path="res://img/Mineral.png" id="2_l7fxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qehij"]
+size = Vector2(44, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7oxd1"]
+radius = 31.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn8mm"]
+bg_color = Color(0, 0.661201, 0.838756, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1.05888e-06, 0.545725, 0.660394, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er28v"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Mineral" type="StaticBody2D"]
+script = ExtResource("1_y03pr")
+
+[node name="Mineral" type="Sprite2D" parent="."]
+scale = Vector2(1.11621, 1.11621)
+texture = ExtResource("2_l7fxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 5)
+shape = SubResource("RectangleShape2D_qehij")
+
+[node name="MineArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MineArea"]
+shape = SubResource("CircleShape2D_7oxd1")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -29.0
+offset_top = -38.0
+offset_right = 28.0
+offset_bottom = -27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vn8mm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_er28v")
+value = 50.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="MineArea" to="." method="_on_mine_area_body_entered"]
+[connection signal="body_exited" from="MineArea" to="." method="_on_mine_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

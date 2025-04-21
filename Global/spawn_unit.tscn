@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://2l2vf3ee1glo"]
+
+[ext_resource type="Script" uid="uid://dwj1k8skx17a2" path="res://Global/spawn_unit.gd" id="1_0dixe"]
+[ext_resource type="FontFile" uid="uid://c0h0luwrfuo3t" path="res://img/fonts/PaluiSPDemo-Bold.otf" id="2_7jxgo"]
+[ext_resource type="Texture2D" uid="uid://ba4xo2wc3tc1h" path="res://img/Builder.png" id="2_mw8dk"]
+[ext_resource type="Texture2D" uid="uid://cjuc8ivdxadqc" path="res://img/CloseButton.png" id="3_ayo5u"]
+[ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="3_uvxnl"]
+[ext_resource type="Texture2D" uid="uid://bjhhjr8muq6xh" path="res://img/Soldier.png" id="4_waq04"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xx7qp"]
+font_size = 20
+
+[node name="SpawnUnit" type="Node2D"]
+script = ExtResource("1_0dixe")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 384.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 416.0
+offset_top = 136.0
+offset_right = 565.0
+offset_bottom = 159.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_7jxgo")
+theme_override_font_sizes/font_size = 22
+text = "Завод"
+horizontal_alignment = 1
+
+[node name="Name1" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 152.0
+offset_right = 416.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0.180392, 0.678431, 0.890196, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("3_uvxnl")
+theme_override_font_sizes/font_size = 24
+text = "Строитель
+"
+horizontal_alignment = 1
+
+[node name="Desc1" type="Label" parent="."]
+offset_left = 240.0
+offset_top = 264.0
+offset_right = 472.0
+offset_bottom = 352.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+text = "Может добывать ресурсы, с помощью которых создаются новые юниты"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Name2" type="Label" parent="."]
+offset_left = 544.0
+offset_top = 152.0
+offset_right = 672.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(1, 0.174173, 0.127215, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("3_uvxnl")
+theme_override_font_sizes/font_size = 24
+text = "Солдат"
+horizontal_alignment = 1
+
+[node name="Desc2" type="Label" parent="."]
+offset_left = 520.0
+offset_top = 272.0
+offset_right = 696.0
+offset_bottom = 321.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 16
+text = "Атакует вражеских юнитов"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CreateBuilder" type="Button" parent="."]
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 384.0
+offset_bottom = 256.0
+
+[node name="Close" type="Button" parent="."]
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 192.0
+icon = ExtResource("3_ayo5u")
+flat = true
+expand_icon = true
+
+[node name="Builder" type="Sprite2D" parent="."]
+position = Vector2(352, 224)
+texture = ExtResource("2_mw8dk")
+
+[node name="Soldier" type="Sprite2D" parent="."]
+position = Vector2(608, 224)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("4_waq04")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 528.0
+offset_top = 208.0
+offset_right = 696.0
+offset_bottom = 236.0
+text = "*В РАЗРАБОТКЕ*"
+label_settings = SubResource("LabelSettings_xx7qp")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CreateBuilder" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
