@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bafkwfcqermta"]
 
-[ext_resource type="Script" path="res://Global/POP.gd" id="1_nmnkj"]
+[ext_resource type="Script" uid="uid://ecrqihdr3dwk" path="res://Global/POP.gd" id="1_nmnkj"]
 [ext_resource type="Texture2D" uid="uid://83sphaxq5hdn" path="res://img/Energy.png" id="2_ty7py"]
 
 [node name="POP" type="Label"]

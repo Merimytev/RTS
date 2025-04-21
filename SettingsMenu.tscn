@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cjyycguhs0sjl"]
 
-[ext_resource type="Script" path="res://SettingsMenu.gd" id="1_bvi2v"]
+[ext_resource type="Script" uid="uid://clpb7boewbpk4" path="res://SettingsMenu.gd" id="1_bvi2v"]
 [ext_resource type="Texture2D" uid="uid://8gaub7jwc4im" path="res://img/Menu.png" id="2_mj02x"]
 [ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="3_441ya"]
-[ext_resource type="Script" path="res://VolumeSlider.gd" id="4_6ih2q"]
+[ext_resource type="Script" uid="uid://dfnoug38wfcdd" path="res://VolumeSlider.gd" id="4_6ih2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylm2q"]
 bg_color = Color(0.821789, 0.821789, 0.821788, 1)

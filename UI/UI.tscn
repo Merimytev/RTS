@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://01hq333aoves"]
 
-[ext_resource type="Script" path="res://UI/UI.gd" id="1_to03m"]
+[ext_resource type="Script" uid="uid://b111d2xnwtdgl" path="res://UI/UI.gd" id="1_to03m"]
 [ext_resource type="Texture2D" uid="uid://83sphaxq5hdn" path="res://img/Energy.png" id="2_7qcg3"]
 [ext_resource type="Texture2D" uid="uid://vhkpsdkaih5p" path="res://img/Mineral.png" id="2_tssxm"]
 [ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="4_mquok"]

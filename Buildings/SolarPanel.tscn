@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvgpipxsk31dx"]
 
 [ext_resource type="Texture2D" uid="uid://de8pua63j1w6i" path="res://img/SolarPanel.png" id="1_8q2ym"]
-[ext_resource type="Script" path="res://Buildings/SolarPanel.gd" id="1_xw1ve"]
+[ext_resource type="Script" uid="uid://ddyej6cdst5g5" path="res://Buildings/SolarPanel.gd" id="1_xw1ve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qull1"]
 size = Vector2(44, 35)

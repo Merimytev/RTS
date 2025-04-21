@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bl4yv5hb4cvx4"]
 
-[ext_resource type="Script" path="res://MainMenu.gd" id="1_ewhjs"]
+[ext_resource type="Script" uid="uid://b548nrpwg63cy" path="res://MainMenu.gd" id="1_ewhjs"]
 [ext_resource type="Texture2D" uid="uid://8gaub7jwc4im" path="res://img/Menu.png" id="2_4wlxm"]
 [ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="3_ok6xu"]
 
@@ -60,8 +60,8 @@ offset_top = 344.0
 offset_right = 466.0
 offset_bottom = 386.0
 focus_neighbor_top = NodePath("../Quit")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
 theme_override_font_sizes/font_size = 28
@@ -78,8 +78,8 @@ offset_top = 407.0
 offset_right = 466.0
 offset_bottom = 449.0
 focus_neighbor_bottom = NodePath("../Statistics")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
 theme_override_font_sizes/font_size = 28
@@ -98,8 +98,8 @@ offset_right = 466.0
 offset_bottom = 512.0
 focus_neighbor_top = NodePath("../Settings")
 focus_neighbor_bottom = NodePath("../Quit")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
 theme_override_font_sizes/font_size = 28
@@ -117,8 +117,8 @@ offset_right = 466.0
 offset_bottom = 575.0
 focus_neighbor_top = NodePath("../Statistics")
 focus_neighbor_bottom = NodePath("../Play")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ok6xu")
 theme_override_font_sizes/font_size = 28

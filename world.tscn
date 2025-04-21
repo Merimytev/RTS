@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://cl5sweqpos2k8"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_1m6ml"]
-[ext_resource type="Script" path="res://UI/Camera.gd" id="1_mov7x"]
+[ext_resource type="Script" uid="uid://dyohnq4dsyhl" path="res://world.gd" id="1_1m6ml"]
+[ext_resource type="Script" uid="uid://b60smdf8fypub" path="res://UI/Camera.gd" id="1_mov7x"]
 [ext_resource type="Texture2D" uid="uid://dgwblxbp3q4pv" path="res://img/River2.png" id="2_232ut"]
 [ext_resource type="PackedScene" uid="uid://p3snma5hv5o2" path="res://Unit/Unit.tscn" id="2_gs7jo"]
 [ext_resource type="Texture2D" uid="uid://j77p2nlw752i" path="res://img/River1.png" id="3_dhi2s"]
