@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://p3snma5hv5o2"]
+
+[ext_resource type="Script" uid="uid://cryjgl53emtq7" path="res://Units/Builder.gd" id="1_2gm1g"]
+[ext_resource type="Texture2D" uid="uid://ba4xo2wc3tc1h" path="res://img/Builder.png" id="2_2y3vx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov13o"]
+size = Vector2(42, 42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pdvx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.2514e-06, 0.714743, 0.68394, 1)
+border_blend = true
+
+[node name="Builder" type="CharacterBody2D"]
+script = ExtResource("1_2gm1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_ov13o")
+
+[node name="Builder" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("2_2y3vx")
+
+[node name="Box" type="Panel" parent="."]
+offset_left = -22.0
+offset_top = -53.0
+offset_right = 22.0
+offset_bottom = -9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pdvx")
