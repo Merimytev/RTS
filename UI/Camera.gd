@@ -20,10 +20,12 @@ var endV = Vector2()
 var isDragging = false
 signal area_selected
 signal start_move_selection
+signal single_click(position)
 @onready var box = get_node("../UI/Panel")
 
 func _ready():
 	connect("area_selected", Callable(get_parent(), "_on_area_selected"))
+	connect("single_click", Callable(get_parent(), "_on_single_click"))
 
 func _process(delta):
 	
@@ -32,6 +34,10 @@ func _process(delta):
 	
 	position.x = lerp(position.x, position.x + inputX * CAMERA_SPEED * zoom.x, CAMERA_SPEED * delta)
 	position.y = lerp(position.y, position.y + inputY * CAMERA_SPEED * zoom.y, CAMERA_SPEED * delta)
+	
+	# Ограничение позиции камеры в пределах limit_*
+	position.x = clamp(position.x, limit_left, limit_right)
+	position.y = clamp(position.y, limit_top, limit_bottom)
 	
 	zoom.x = lerp(zoom.x, zoom.x * zoomFactor, ZOOM_SPEED * delta)
 	zoom.y = lerp(zoom.y, zoom.y * zoomFactor, ZOOM_SPEED * delta)
@@ -54,7 +60,6 @@ func _process(delta):
 	
 	if Input.is_action_just_released("LeftClick"):
 		if startV.distance_to(mousePos) > 20:
-			 
 			end = mousePosGlobal
 			endV = mousePos
 			isDragging = false
@@ -62,8 +67,10 @@ func _process(delta):
 			emit_signal("area_selected", self)
 		else:
 			end = start
+			endV = mousePos
 			isDragging = false
 			draw_area(false)
+			emit_signal("single_click", mousePosGlobal)
 
 func _input(event):
 	if abs(zoomPos.x - get_global_mouse_position().x) > ZOOM_MARGIN:
@@ -94,4 +101,3 @@ func draw_area(s=true):
 	pos.y = min(startV.y, endV.y)
 	box.position = pos
 	box.size *= int(s)
-	

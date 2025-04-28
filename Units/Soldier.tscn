@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://f0gbcsp2i726"]
+
+[ext_resource type="Script" uid="uid://bwibvlddj7w6v" path="res://Units/Soldier.gd" id="1_byptv"]
+[ext_resource type="Texture2D" uid="uid://bjhhjr8muq6xh" path="res://img/Soldier.png" id="1_mbpm8"]
+[ext_resource type="PackedScene" uid="uid://bq1rr8ueo4qqk" path="res://Bullet/bullet.tscn" id="2_wnpey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byptv"]
+size = Vector2(42, 42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnpey"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.2514e-06, 0.714743, 0.68394, 1)
+border_blend = true
+
+[node name="Soldier" type="CharacterBody2D"]
+script = ExtResource("1_byptv")
+bullet_scene = ExtResource("2_wnpey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_byptv")
+
+[node name="Soldier" type="Sprite2D" parent="."]
+position = Vector2(0, -31)
+scale = Vector2(1.6914, 1.6914)
+texture = ExtResource("1_mbpm8")
+
+[node name="Box" type="Panel" parent="."]
+offset_left = -22.0
+offset_top = -53.0
+offset_right = 22.0
+offset_bottom = -9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wnpey")

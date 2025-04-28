@@ -5,12 +5,19 @@ var total_elapsed_time = 0.0
 
 func _process(delta: float) -> void:
 	total_elapsed_time += delta
+	# Обновление списка юнитов, чтобы удалить убитых
+	update_units()
 
 func _ready():
 	get_units()
 
 func get_units():
 	units = get_tree().get_nodes_in_group("units")
+	
+func update_units():
+	units = units.filter(func(unit): return is_instance_valid(unit))
+	# Или заново получаем юниты из группы
+	# units = get_tree().get_nodes_in_group("units")
 
 func _on_area_selected(object):
 	var start = object.start
@@ -22,7 +29,23 @@ func _on_area_selected(object):
 	for u in units:
 		u.set_selected(false)
 	for u in ut:
-		u.set_selected(!u.selected)
+		u.set_selected(true)
+		
+func _on_single_click(click_position: Vector2):
+	var area = []
+	area.append(click_position - Vector2(30, 30)) # Левый верхний угол
+	area.append(click_position + Vector2(30, 50)) # Правый нижний угол
+	
+	var units_in_click_area = get_units_in_area(area)
+	
+	# Снимается выделение со всех юнитов
+	if units_in_click_area.size() == 0:
+		for unit in units:
+			unit.set_selected(false)
+	else:
+		# Выделение одного юнита
+		for unit in units:
+			unit.set_selected(unit == units_in_click_area[0])
 
 func get_units_in_area(area):
 	var u = []

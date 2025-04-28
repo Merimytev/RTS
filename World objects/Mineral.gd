@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func _on_mine_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("units"):
+	if body.is_in_group("builders"):
 		units += 1
 		startMining()
 		
@@ -31,14 +31,12 @@ func _on_mine_area_body_exited(body: Node2D) -> void:
 			timer.stop()
 
 func _on_timer_timeout() -> void:
-	currTime -= 1*units
+	currTime -= 1 * units
 	var tween = get_node("Mineral").create_tween()
 	tween.tween_property(bar, "value", currTime, 0.8).set_trans(Tween.TRANS_LINEAR)
 	
-
 func startMining():
 	timer.start()
-	
 	
 func mineralMined():
 	Game.Minerals += 1

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bndks45jl8sp1"]
+
+[ext_resource type="Script" uid="uid://0o7w5h4ij2wd" path="res://Units/Enemie.gd" id="1_tvyna"]
+[ext_resource type="Texture2D" uid="uid://db24iexo82umt" path="res://img/Enemie.png" id="2_66rb2"]
+[ext_resource type="PackedScene" uid="uid://bq1rr8ueo4qqk" path="res://Bullet/bullet.tscn" id="2_aw3mo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov13o"]
+size = Vector2(42, 42)
+
+[node name="Enemie" type="CharacterBody2D"]
+script = ExtResource("1_tvyna")
+bullet_scene = ExtResource("2_aw3mo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_ov13o")
+
+[node name="Enemie" type="Sprite2D" parent="."]
+position = Vector2(0, -31)
+scale = Vector2(1.691, 1.691)
+texture = ExtResource("2_66rb2")
