@@ -34,7 +34,7 @@ func _physics_process(delta):
 		move_and_slide()
 		
 # Поворот спрайта
-	if Builder is Sprite2D or Builder is AnimatedSprite2D:
+	if Builder is Sprite2D:
 		if velocity.x < 0: # налево
 			Builder.flip_h = true
 		elif velocity.x > 0: # направо

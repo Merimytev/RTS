@@ -18,9 +18,10 @@ var startV = Vector2()
 var end = Vector2()
 var endV = Vector2()
 var isDragging = false
-signal area_selected
+var shift_add := false
+signal area_selected(camera_node: Node, additive: bool)
 signal start_move_selection
-signal single_click(position)
+signal single_click(position: Vector2, additive: bool)
 @onready var box = get_node("../UI/Panel")
 
 func _ready():
@@ -52,6 +53,7 @@ func _process(delta):
 		start = mousePosGlobal
 		startV = mousePos
 		isDragging = true
+		shift_add = Input.is_action_pressed("Shift")
 	
 	if isDragging:
 		end = mousePosGlobal
@@ -64,13 +66,13 @@ func _process(delta):
 			endV = mousePos
 			isDragging = false
 			draw_area(false)
-			emit_signal("area_selected", self)
+			emit_signal("area_selected", self, shift_add)
 		else:
 			end = start
 			endV = mousePos
 			isDragging = false
 			draw_area(false)
-			emit_signal("single_click", mousePosGlobal)
+			emit_signal("single_click", mousePosGlobal, shift_add)
 
 func _input(event):
 	if abs(zoomPos.x - get_global_mouse_position().x) > ZOOM_MARGIN:

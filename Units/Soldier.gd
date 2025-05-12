@@ -62,11 +62,16 @@ func _shooting():
 		print("Cannot shoot: bullet_scene is null")
 
 func _shoot(enemy):
+	if not bullet_scene:
+		print("Cannot shoot: bullet_scene is null")
+		return
+	
 	var bullet = bullet_scene.instantiate()
-	bullet.position = position
-	bullet.direction = (enemy.position - position).normalized()
-	get_tree().root.add_child(bullet)
-	print("Bullet fired at: ", enemy.position) # Отладка
+	bullet.shooter_group = "units" # Устанавливаем группу стреляющего
+	bullet.position = $Muzzle.global_position if has_node("Muzzle") else global_position + Vector2(10, 0) # Смещение, если нет Muzzle
+	bullet.direction = (enemy.global_position - bullet.position).normalized()
+	get_tree().current_scene.add_child(bullet)
+	print("Bullet fired at: ", enemy.global_position, " from: ", bullet.global_position)
 
 func get_units_in_area(radius: float):
 	var enemies = []

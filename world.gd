@@ -19,33 +19,39 @@ func update_units():
 	# Или заново получаем юниты из группы
 	# units = get_tree().get_nodes_in_group("units")
 
-func _on_area_selected(object):
-	var start = object.start
-	var end = object.end
+func _on_area_selected(camera_node: Node, additive: bool) -> void:
+	var start = camera_node.start
+	var end = camera_node.end
+	
 	var area = []
 	area.append(Vector2(min(start.x, end.x), min(start.y, end.y)))
 	area.append(Vector2(max(start.x, end.x), max(start.y, end.y)))
+	
 	var ut = get_units_in_area(area)
-	for u in units:
-		u.set_selected(false)
+	if not additive:
+		for u in units:
+			u.set_selected(false)
 	for u in ut:
 		u.set_selected(true)
+
 		
-func _on_single_click(click_position: Vector2):
+func _on_single_click(click_position: Vector2, additive: bool):
 	var area = []
 	area.append(click_position - Vector2(30, 30)) # Левый верхний угол
-	area.append(click_position + Vector2(30, 50)) # Правый нижний угол
+	area.append(click_position + Vector2(25, 40)) # Правый нижний угол
 	
 	var units_in_click_area = get_units_in_area(area)
-	
-	# Снимается выделение со всех юнитов
+
 	if units_in_click_area.size() == 0:
-		for unit in units:
-			unit.set_selected(false)
+		if not additive:
+			for unit in units:
+				unit.set_selected(false)
 	else:
-		# Выделение одного юнита
-		for unit in units:
-			unit.set_selected(unit == units_in_click_area[0])
+		if not additive:
+			for unit in units:
+				unit.set_selected(false)
+		for unit in units_in_click_area:
+			unit.set_selected(true)
 
 func get_units_in_area(area):
 	var u = []

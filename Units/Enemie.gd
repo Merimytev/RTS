@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var attack_range = 200.0
 @export var detection_range = 300.0
 @export var attack_rate = 1.0
-@export var bullet_scene: PackedScene # Пуля (Bullet.tscn)
+@export var bullet_scene: PackedScene # Пуля
 
 var target = null
 var can_attack = true
