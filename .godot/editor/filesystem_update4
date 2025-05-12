@@ -1,10 +1,7 @@
-res://Units/Enemie.tscn
-res://UI/Camera.gd
 res://Global/POP.tscn
 res://Global/spawn_unit.tscn
 res://world.tscn
 res://Units/Builder.tscn
 res://Units/Soldier.tscn
+res://Units/Enemie.tscn
 res://Bullet/bullet.tscn
-res://world.gd
-res://Units/Enemie.gd
