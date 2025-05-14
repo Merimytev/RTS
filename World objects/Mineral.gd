@@ -25,7 +25,7 @@ func _on_mine_area_body_entered(body: Node2D) -> void:
 		
 
 func _on_mine_area_body_exited(body: Node2D) -> void:
-	if "Unit" in body.name:
+	if "Builder" in body.name:
 		units -= 1
 		if units <= 0:
 			timer.stop()
@@ -39,5 +39,5 @@ func startMining():
 	timer.start()
 	
 func mineralMined():
-	Game.Minerals += 1
+	Game.Minerals += 25
 	queue_free()

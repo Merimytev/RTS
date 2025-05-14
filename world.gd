@@ -16,20 +16,23 @@ func get_units():
 	
 func update_units():
 	units = units.filter(func(unit): return is_instance_valid(unit))
-	# Или заново получаем юниты из группы
-	# units = get_tree().get_nodes_in_group("units")
 
-func _on_area_selected(object):
-	var start = object.start
-	var end = object.end
+
+func _on_area_selected(camera_node: Node, additive: bool) -> void:
+	var start = camera_node.start
+	var end = camera_node.end
+	
 	var area = []
 	area.append(Vector2(min(start.x, end.x), min(start.y, end.y)))
 	area.append(Vector2(max(start.x, end.x), max(start.y, end.y)))
+	
 	var ut = get_units_in_area(area)
-	for u in units:
-		u.set_selected(false)
+	if not additive:
+		for u in units:
+			u.set_selected(false)
 	for u in ut:
 		u.set_selected(true)
+
 		
 func _on_single_click(click_position: Vector2):
 	var area = []

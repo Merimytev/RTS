@@ -4,20 +4,19 @@
 [ext_resource type="Script" uid="uid://dgbioncu2tm0r" path="res://Bullet/Bullet.gd" id="1_4qwpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qwpv"]
-size = Vector2(28, 82)
+size = Vector2(20, 46)
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_4qwpv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, 1)
-scale = Vector2(0.0190321, 0.0190321)
+position = Vector2(1.19209e-07, -4.76837e-07)
+scale = Vector2(0.0106979, 0.0106979)
 texture = ExtResource("1_2dao8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_4qwpv")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-4.76837e-07, 5.96046e-08)
-scale = Vector2(1.4, 1.1)
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1, 2.3)

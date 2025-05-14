@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747021206
+::res://::1747191729
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::8103304321033771522::1745224484::0::1::::<><><>0<>0<><>::
 MainMenu.gd::GDScript/GDScript::4553980740861729956::1737179229::0::1::::<>Node2D<><>0<>0<><>::
 MainMenu.tscn::PackedScene/PackedScene::3219861214676016831::1745213674::0::1::::<><><>0<>0<><>::uid://b548nrpwg63cy::::res://MainMenu.gd<>uid://8gaub7jwc4im::::res://img/Menu.png<>uid://dvn073b5o2dwm::::res://img/fonts/Orbit-Regular.ttf
@@ -7,15 +7,15 @@ RTS.tres::MeshLibrary/MeshLibrary::6233810554431338577::1736387475::0::1::::<><>
 SettingsMenu.gd::GDScript/GDScript::5576002250474988181::1745213109::0::1::::<>Node2D<><>0<>0<><>::
 SettingsMenu.tscn::PackedScene/PackedScene::5455547152019428045::1745213718::0::1::::<><><>0<>0<><>::uid://clpb7boewbpk4::::res://SettingsMenu.gd<>uid://8gaub7jwc4im::::res://img/Menu.png<>uid://dvn073b5o2dwm::::res://img/fonts/Orbit-Regular.ttf<>uid://dfnoug38wfcdd::::res://VolumeSlider.gd
 VolumeSlider.gd::GDScript/GDScript::7537929293772662425::1737179229::0::1::::<>HSlider<><>0<>0<><>::
-world.gd::GDScript::260974844310390841::1747020908::0::1::::<>Node2D<><>0<>0<><>::
-world.tscn::PackedScene::5607982408873306033::1747021206::0::1::::<><><>0<>0<><>::uid://dyohnq4dsyhl::::res://world.gd<>uid://b60smdf8fypub::::res://UI/Camera.gd<>uid://dgwblxbp3q4pv::::res://img/River2.png<>uid://p3snma5hv5o2::::res://Units/Builder.tscn<>uid://j77p2nlw752i::::res://img/River1.png<>uid://dupgkjwewdblv::::res://img/MainTile.png<>uid://ch3mbfpk7bfqu::::res://World objects/Mineral.tscn<>uid://01hq333aoves::::res://UI/UI.tscn<>uid://bndks45jl8sp1::::res://Units/Enemie.tscn<>uid://bf3b4l314uo5::::res://Buildings/Factory.tscn<>uid://bvgpipxsk31dx::::res://Buildings/SolarPanel.tscn<>uid://bdv0sh2ekso8v::::res://Audio/OSTDynamic.wav<>uid://cewmalrtas051::::res://Audio/OSTAmbient.wav<>uid://cf8jgcmh3a613::::res://img/Tree1.png<>uid://c5p3kc83yhxy2::::res://img/Tree2.png
+world.gd::GDScript/GDScript::260974844310390841::1747020908::0::1::::<>Node2D<><>0<>0<><>::
+world.tscn::PackedScene/PackedScene::5607982408873306033::1747022626::0::1::::<><><>0<>0<><>::uid://dyohnq4dsyhl::::res://world.gd<>uid://b60smdf8fypub::::res://UI/Camera.gd<>uid://dgwblxbp3q4pv::::res://img/River2.png<>uid://p3snma5hv5o2::::res://Units/Builder.tscn<>uid://j77p2nlw752i::::res://img/River1.png<>uid://dupgkjwewdblv::::res://img/MainTile.png<>uid://ch3mbfpk7bfqu::::res://World objects/Mineral.tscn<>uid://01hq333aoves::::res://UI/UI.tscn<>uid://bndks45jl8sp1::::res://Units/Enemie.tscn<>uid://bf3b4l314uo5::::res://Buildings/Factory.tscn<>uid://bvgpipxsk31dx::::res://Buildings/SolarPanel.tscn<>uid://bdv0sh2ekso8v::::res://Audio/OSTDynamic.wav<>uid://cewmalrtas051::::res://Audio/OSTAmbient.wav<>uid://cf8jgcmh3a613::::res://img/Tree1.png<>uid://c5p3kc83yhxy2::::res://img/Tree2.png
 ::res://addons/::1737179377
 ::res://addons/godot-sqlite/::1745213110
 gdsqlite.gdextension::GDExtension/GDExtension::2265782499762982910::1745213110::0::1::::<><><>0<>0<><>::
 godot-sqlite.gd::GDScript/GDScript::6001210839657532109::1745213110::0::1::::<>EditorPlugin<><>0<>1<><>::
 LICENSE.md::TextFile/TextFile::-1::1745213109::0::1::::<><><>0<>0<><>::
 plugin.cfg::TextFile/TextFile::-1::1745213110::0::1::::<><><>0<>0<><>::
-::res://addons/godot-sqlite/bin/::1747021149
+::res://addons/godot-sqlite/bin/::1747191725
 ::res://addons/godot-sqlite/bin/libgdsqlite.ios.template_debug.xcframework/::1745213109
 ::res://addons/godot-sqlite/bin/libgdsqlite.ios.template_debug.xcframework/ios-arm64/::1745213109
 ::res://addons/godot-sqlite/bin/libgdsqlite.ios.template_debug.xcframework/ios-arm64_x86_64-simulator/::1745213109
@@ -40,16 +40,16 @@ Factory.gd::GDScript/GDScript::2398646417893499694::1745213109::0::1::::<>Static
 Factory.tscn::PackedScene/PackedScene::82214135477799954::1745224484::0::1::::<><><>0<>0<><>::res://Buildings/Factory.gd<>uid://b2qe7mfhsthni::::res://img/FactoryBlue.png
 SolarPanel.gd::GDScript/GDScript::7419634219681650170::1745213109::0::1::::<>StaticBody2D<><>0<>0<><>::
 SolarPanel.tscn::PackedScene/PackedScene::3873698532071961317::1745213109::0::1::::<><><>0<>0<><>::uid://de8pua63j1w6i::::res://img/SolarPanel.png<>uid://ddyej6cdst5g5::::res://Buildings/SolarPanel.gd
-::res://Bullet/::1747021206
-Bullet.gd::GDScript::7582970914557069275::1747020908::0::1::::<>Area2D<><>0<>0<><>::
-bullet.tscn::PackedScene::3564180315248838834::1747021206::0::1::::<><><>0<>0<><>::uid://bf1jg8jk0j2ve::::res://img/Bullet.png<>uid://dgbioncu2tm0r::::res://Bullet/Bullet.gd
-::res://Global/::1747021206
+::res://Bullet/::1747023241
+Bullet.gd::GDScript/GDScript::7582970914557069275::1747020908::0::1::::<>Area2D<><>0<>0<><>::
+bullet.tscn::PackedScene/PackedScene::3564180315248838834::1747023241::0::1::::<><><>0<>0<><>::uid://bf1jg8jk0j2ve::::res://img/Bullet.png<>uid://dgbioncu2tm0r::::res://Bullet/Bullet.gd
+::res://Global/::1747022626
 Game.gd::GDScript/GDScript::4997231117259017964::1745213109::0::1::::<>Node<><>0<>0<><>::
 POP.gd::GDScript/GDScript::285945322800318098::1745213109::0::1::::<>Label<><>0<>0<><>::
-POP.tscn::PackedScene::2397389296296326654::1747021206::0::1::::<><><>0<>0<><>::uid://ecrqihdr3dwk::::res://Global/POP.gd<>uid://83sphaxq5hdn::::res://img/Energy.png
+POP.tscn::PackedScene/PackedScene::2397389296296326654::1747022626::0::1::::<><><>0<>0<><>::uid://ecrqihdr3dwk::::res://Global/POP.gd<>uid://83sphaxq5hdn::::res://img/Energy.png
 spawn_unit.gd::GDScript/GDScript::8723594272216713755::1745777657::0::1::::<>Node2D<><>0<>0<><>::
-spawn_unit.tscn::PackedScene::1919484100057619884::1747021206::0::1::::<><><>0<>0<><>::uid://dwj1k8skx17a2::::res://Global/spawn_unit.gd<>uid://c0h0luwrfuo3t::::res://img/fonts/PaluiSPDemo-Bold.otf<>uid://ba4xo2wc3tc1h::::res://img/Builder.png<>uid://cjuc8ivdxadqc::::res://img/CloseButton.png<>uid://dvn073b5o2dwm::::res://img/fonts/Orbit-Regular.ttf<>uid://bjhhjr8muq6xh::::res://img/Soldier.png
-::res://img/::1747021724
+spawn_unit.tscn::PackedScene/PackedScene::1919484100057619884::1747022626::0::1::::<><><>0<>0<><>::uid://dwj1k8skx17a2::::res://Global/spawn_unit.gd<>uid://c0h0luwrfuo3t::::res://img/fonts/PaluiSPDemo-Bold.otf<>uid://ba4xo2wc3tc1h::::res://img/Builder.png<>uid://cjuc8ivdxadqc::::res://img/CloseButton.png<>uid://dvn073b5o2dwm::::res://img/fonts/Orbit-Regular.ttf<>uid://bjhhjr8muq6xh::::res://img/Soldier.png
+::res://img/::1747021725
 Builder.png::CompressedTexture2D/CompressedTexture2D::2447710582754321051::1745213110::1745213335::1::::<><><>0<>0<>e5ce61002a672ebbae3151574778bf3b<>res://.godot/imported/Builder.png-a787aeaf84e68d555aa9316f8704d6af.ctex::
 Bullet.png::CompressedTexture2D/CompressedTexture2D::2791597638849087506::1747021724::1747021725::1::::<><><>0<>0<>cb52471b7048122dbc338acded2dbdd1<>res://.godot/imported/Bullet.png-992f756b65c33bf08fbf83ec8d66d506.ctex::
 CloseButton.png::CompressedTexture2D/CompressedTexture2D::5446009333188823486::1745213110::1745213335::1::::<><><>0<>0<>202ddd614253281643456dc422dae667<>res://.godot/imported/CloseButton.png-fdd04604fa2b973152e19f6a7e3bd6a2.ctex::
@@ -72,16 +72,16 @@ PaluiSPDemo-Bold.otf::FontFile/FontFile::6543551756400132755::1745213110::174522
 Stats.gd::GDScript/GDScript::4281260931867961457::1745213109::0::1::::<>Node2D<><>0<>0<><>::
 Stats.tscn::PackedScene/PackedScene::4576411443492061082::1745224484::0::1::::<><><>0<>0<><>::uid://8gaub7jwc4im::::res://img/Menu.png<>res://Stats/Stats.gd<>uid://dvn073b5o2dwm::::res://img/fonts/Orbit-Regular.ttf
 ::res://UI/::1747020908
-Camera.gd::GDScript::4614998782521338965::1747020908::0::1::::<>Camera2D<><>0<>0<><>::
+Camera.gd::GDScript/GDScript::4614998782521338965::1747020908::0::1::::<>Camera2D<><>0<>0<><>::
 UI.gd::GDScript/GDScript::4266589893362905787::1737179229::0::1::::<>CanvasLayer<><>0<>0<><>::
 UI.tscn::PackedScene/PackedScene::1808850019389301598::1745224484::0::1::::<><><>0<>0<><>::res://UI/UI.gd<>uid://83sphaxq5hdn::::res://img/Energy.png<>uid://vhkpsdkaih5p::::res://img/Mineral.png<>uid://dvn073b5o2dwm::::res://img/fonts/Orbit-Regular.ttf
-::res://Units/::1747021206
-Builder.gd::GDScript::6016154568407530284::1747020908::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Builder.tscn::PackedScene::1111751984528198855::1747021206::0::1::::<><><>0<>0<><>::uid://cryjgl53emtq7::::res://Units/Builder.gd<>uid://ba4xo2wc3tc1h::::res://img/Builder.png
-Enemie.gd::GDScript::1785606198584919939::1747020908::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Enemie.tscn::PackedScene::3305709668413877688::1747021206::0::1::::<><><>0<>0<><>::uid://0o7w5h4ij2wd::::res://Units/Enemie.gd<>uid://db24iexo82umt::::res://img/Enemie.png<>uid://bq1rr8ueo4qqk::::res://Bullet/bullet.tscn
-Soldier.gd::GDScript::3947189066967943355::1747020908::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Soldier.tscn::PackedScene::402919883363304581::1747021206::0::1::::<><><>0<>0<><>::uid://bwibvlddj7w6v::::res://Units/Soldier.gd<>uid://bjhhjr8muq6xh::::res://img/Soldier.png<>uid://bq1rr8ueo4qqk::::res://Bullet/bullet.tscn
+::res://Units/::1747022626
+Builder.gd::GDScript/GDScript::6016154568407530284::1747020908::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Builder.tscn::PackedScene/PackedScene::1111751984528198855::1747022626::0::1::::<><><>0<>0<><>::uid://cryjgl53emtq7::::res://Units/Builder.gd<>uid://ba4xo2wc3tc1h::::res://img/Builder.png
+Enemie.gd::GDScript/GDScript::1785606198584919939::1747020908::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Enemie.tscn::PackedScene/PackedScene::3305709668413877688::1747022626::0::1::::<><><>0<>0<><>::uid://0o7w5h4ij2wd::::res://Units/Enemie.gd<>uid://db24iexo82umt::::res://img/Enemie.png<>uid://bq1rr8ueo4qqk::::res://Bullet/bullet.tscn
+Soldier.gd::GDScript/GDScript::3947189066967943355::1747020908::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Soldier.tscn::PackedScene/PackedScene::402919883363304581::1747022626::0::1::::<><><>0<>0<><>::uid://bwibvlddj7w6v::::res://Units/Soldier.gd<>uid://bjhhjr8muq6xh::::res://img/Soldier.png<>uid://bq1rr8ueo4qqk::::res://Bullet/bullet.tscn
 ::res://World objects/::1745815947
 Mineral.gd::GDScript/GDScript::2305842821744877745::1745784102::0::1::::<>StaticBody2D<><>0<>0<><>::
 Mineral.tscn::PackedScene/PackedScene::5322696525959184592::1745785773::0::1::::<><><>0<>0<><>::uid://7375n57ud2g8::::res://World objects/Mineral.gd<>uid://vhkpsdkaih5p::::res://img/Mineral.png

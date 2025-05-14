@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 @onready var target = position
 var follow_cursor = false
-var Speed = 80
+var Speed = 100
 var HP = 100
 
 @export var attack_range = 200.0

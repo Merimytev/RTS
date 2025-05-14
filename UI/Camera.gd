@@ -17,8 +17,10 @@ var start = Vector2()
 var startV = Vector2()
 var end = Vector2()
 var endV = Vector2()
+
 var isDragging = false
-signal area_selected
+var is_additive_selection := false
+signal area_selected(camera_node: Node, additive: bool)
 signal start_move_selection
 signal single_click(position)
 @onready var box = get_node("../UI/Panel")
@@ -52,7 +54,8 @@ func _process(delta):
 		start = mousePosGlobal
 		startV = mousePos
 		isDragging = true
-	
+		is_additive_selection = Input.is_action_pressed("Shift")  # Проверка Shift через InputMap
+			
 	if isDragging:
 		end = mousePosGlobal
 		endV = mousePos
@@ -64,7 +67,7 @@ func _process(delta):
 			endV = mousePos
 			isDragging = false
 			draw_area(false)
-			emit_signal("area_selected", self)
+			emit_signal("area_selected", self, is_additive_selection)
 		else:
 			end = start
 			endV = mousePos
