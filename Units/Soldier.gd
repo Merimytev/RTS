@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var selected = false
 @onready var box = get_node("Box")
-
+@onready var navigation_agent = $NavigationAgent2D 
 @onready var target = position
 var follow_cursor = false
 var Speed = 100
@@ -27,7 +27,9 @@ func _ready():
 	
 	if not bullet_scene:
 		print("Warning: bullet_scene not set in ", name)
-
+	navigation_agent.path_desired_distance = 20.0  # Расстояние, на котором путь считается завершённым
+	navigation_agent.target_desired_distance = 10.0  # Расстояние до цели
+	
 func set_selected(value):
 	selected = value
 	box.visible = value
@@ -40,15 +42,24 @@ func _input(event):
 		follow_cursor = false
 
 func _physics_process(delta):
-	if follow_cursor == true:
-		if selected:
-			target = get_global_mouse_position()
-	velocity = position.direction_to(target)*Speed
-	if position.distance_to(target) > 10:
+	if follow_cursor and selected:
+		# Обновляем целевую позицию при движении курсора
+		target = get_global_mouse_position()
+		navigation_agent.set_target_position(target)
+
+	# Если есть путь, двигаемся к следующей точке
+	if navigation_agent.is_navigation_finished():
+		velocity = Vector2.ZERO
+		return
+		
+	var next_path_position = navigation_agent.get_next_path_position()
+	velocity = position.direction_to(next_path_position) * Speed
+	if position.distance_to(next_path_position) > navigation_agent.path_desired_distance:
 		move_and_slide()
+	
 	else:
 		pass
-		
+
 	_shooting()
 	
 func _shooting():

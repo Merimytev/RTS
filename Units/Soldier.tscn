@@ -35,3 +35,11 @@ offset_top = -53.0
 offset_right = 22.0
 offset_bottom = -9.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wnpey")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 175.54
+target_desired_distance = 93.25
+navigation_layers = 2
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.226471, 0.708427, 0.261719, 1)
