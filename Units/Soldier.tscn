@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://f0gbcsp2i726"]
+[gd_scene load_steps=5 format=3 uid="uid://f0gbcsp2i726"]
 
 [ext_resource type="Script" uid="uid://bwibvlddj7w6v" path="res://Units/Soldier.gd" id="1_byptv"]
 [ext_resource type="Texture2D" uid="uid://bjhhjr8muq6xh" path="res://img/Soldier.png" id="1_mbpm8"]
-[ext_resource type="PackedScene" uid="uid://bq1rr8ueo4qqk" path="res://Bullet/bullet.tscn" id="2_wnpey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byptv"]
 size = Vector2(42, 42)
@@ -18,7 +17,6 @@ border_blend = true
 
 [node name="Soldier" type="CharacterBody2D"]
 script = ExtResource("1_byptv")
-bullet_scene = ExtResource("2_wnpey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -31)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://2l2vf3ee1glo"]
+[gd_scene load_steps=9 format=3 uid="uid://2l2vf3ee1glo"]
 
 [ext_resource type="Script" uid="uid://dwj1k8skx17a2" path="res://Global/spawn_unit.gd" id="1_0dixe"]
 [ext_resource type="FontFile" uid="uid://c0h0luwrfuo3t" path="res://img/fonts/PaluiSPDemo-Bold.otf" id="2_7jxgo"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cjuc8ivdxadqc" path="res://img/CloseButton.png" id="3_ayo5u"]
 [ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="3_uvxnl"]
 [ext_resource type="Texture2D" uid="uid://bjhhjr8muq6xh" path="res://img/Soldier.png" id="4_waq04"]
+[ext_resource type="Texture2D" uid="uid://vhkpsdkaih5p" path="res://img/Mineral.png" id="7_4etnc"]
+[ext_resource type="Texture2D" uid="uid://83sphaxq5hdn" path="res://img/Energy.png" id="8_od675"]
 
 [node name="SpawnUnit" type="Node2D"]
 script = ExtResource("1_0dixe")
@@ -103,6 +105,62 @@ texture = ExtResource("2_mw8dk")
 position = Vector2(608, 224)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("4_waq04")
+
+[node name="Minerals" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 200.0
+offset_right = 464.0
+offset_bottom = 224.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_uvxnl")
+text = "0"
+
+[node name="MineralsPNG" type="Sprite2D" parent="Minerals"]
+position = Vector2(-20.805, 13)
+scale = Vector2(0.589171, 0.589171)
+texture = ExtResource("7_4etnc")
+
+[node name="Minerals2" type="Label" parent="."]
+offset_left = 686.0
+offset_top = 200.0
+offset_right = 720.0
+offset_bottom = 224.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_uvxnl")
+text = "12"
+
+[node name="MineralsPNG" type="Sprite2D" parent="Minerals2"]
+position = Vector2(-19.22, 13)
+scale = Vector2(0.589171, 0.589171)
+texture = ExtResource("7_4etnc")
+
+[node name="Energy" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 232.0
+offset_right = 464.0
+offset_bottom = 256.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_uvxnl")
+text = "50"
+
+[node name="EnergyPNG" type="Sprite2D" parent="Energy"]
+position = Vector2(-19.46, 13)
+scale = Vector2(0.0476074, 0.0476074)
+texture = ExtResource("8_od675")
+
+[node name="Energy2" type="Label" parent="."]
+offset_left = 686.0
+offset_top = 232.0
+offset_right = 720.0
+offset_bottom = 256.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_uvxnl")
+text = "10"
+
+[node name="EnergyPNG" type="Sprite2D" parent="Energy2"]
+position = Vector2(-19.22, 13)
+scale = Vector2(0.0476074, 0.0476074)
+texture = ExtResource("8_od675")
 
 [connection signal="pressed" from="CreateBuilder" to="." method="_on_create_pressed_builder"]
 [connection signal="pressed" from="CreateSoldier" to="." method="_on_create_pressed_soldier"]

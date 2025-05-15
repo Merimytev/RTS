@@ -10,13 +10,13 @@ var HP = 100
 
 @export var attack_range = 200.0
 @export var fire_rate = 1.0
-@export var bullet_scene: PackedScene # Пуля (Bullet.tscn)
+@export var damage = 25
 var can_shoot = true
 
 func _ready():
 	set_selected(selected)
 	add_to_group("units", true)
-	
+
 	var timer = Timer.new()
 	timer.wait_time = 1.0 / fire_rate
 	timer.autostart = false
@@ -24,17 +24,15 @@ func _ready():
 	timer.connect("timeout", Callable(self, "_on_shoot_timer_timeout"))
 	add_child(timer)
 	timer.name = "ShootTimer"
-	
-	if not bullet_scene:
-		print("Warning: bullet_scene not set in ", name)
-	navigation_agent.path_desired_distance = 20.0  # Расстояние, на котором путь считается завершённым
-	navigation_agent.target_desired_distance = 10.0  # Расстояние до цели
+
+	navigation_agent.path_desired_distance = 20.0
+	navigation_agent.target_desired_distance = 10.0
 	
 func set_selected(value):
 	selected = value
 	box.visible = value
-	print("Soldier ", name, " selected: ", selected) # Отладка
-	
+	print("Soldier ", name, " selected: ", selected)
+
 func _input(event):
 	if event.is_action_pressed("RightClick"):
 		follow_cursor = true
@@ -43,41 +41,30 @@ func _input(event):
 
 func _physics_process(delta):
 	if follow_cursor and selected:
-		# Обновляем целевую позицию при движении курсора
 		target = get_global_mouse_position()
 		navigation_agent.set_target_position(target)
 
-	# Если есть путь, двигаемся к следующей точке
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
-		return
-		
-	var next_path_position = navigation_agent.get_next_path_position()
-	velocity = position.direction_to(next_path_position) * Speed
-	if position.distance_to(next_path_position) > navigation_agent.path_desired_distance:
-		move_and_slide()
-	
 	else:
-		pass
+		var next_path_position = navigation_agent.get_next_path_position()
+		velocity = position.direction_to(next_path_position) * Speed
+		if position.distance_to(next_path_position) > navigation_agent.path_desired_distance:
+			move_and_slide()
 
 	_shooting()
-	
+
 func _shooting():
 	var units_in_area = get_units_in_area(attack_range)
-	print("Enemies in range: ", units_in_area) # Отладка
-	if units_in_area and can_shoot:
-		_shoot(units_in_area[0]) # Стреляем в ближайшего врага
+	if units_in_area.size() > 0 and can_shoot:
+		var target_enemy = units_in_area[0]
+		if target_enemy.has_method("take_damage"):
+			target_enemy.take_damage(damage)
+			print("Soldier attacked ", target_enemy.name, " for ", damage, " damage")
+		else:
+			print("Target has no take_damage method")
 		can_shoot = false
 		$ShootTimer.start()
-	elif not bullet_scene:
-		print("Cannot shoot: bullet_scene is null")
-
-func _shoot(enemy):
-	var bullet = bullet_scene.instantiate()
-	bullet.position = position
-	bullet.direction = (enemy.position - position).normalized()
-	get_tree().root.add_child(bullet)
-	print("Bullet fired at: ", enemy.position) # Отладка
 
 func get_units_in_area(radius: float):
 	var enemies = []
@@ -87,22 +74,20 @@ func get_units_in_area(radius: float):
 	shape.radius = radius
 	query.shape = shape
 	query.transform = Transform2D(0, position)
-	query.collision_mask = 1 << 0 # Юниты на слое 1 (индекс 0)
-	
+	query.collision_mask = 1 << 0 # Убедись, что враги на нужном слое
+
 	var results = space_state.intersect_shape(query)
 	for result in results:
 		var collider = result.collider
 		if collider.is_in_group("enemies"):
 			enemies.append(collider)
 	
-	# Сортируем по расстоянию
 	enemies.sort_custom(func(a, b): return position.distance_squared_to(a.position) < position.distance_squared_to(b.position))
 	return enemies
 
 func _on_shoot_timer_timeout():
 	can_shoot = true
-	print("Shoot timer reset, can_shoot: ", can_shoot) # Отладка
-	
+
 func take_damage(damage):
 	HP -= damage
 	if HP <= 0:
