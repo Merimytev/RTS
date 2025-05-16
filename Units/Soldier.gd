@@ -39,7 +39,7 @@ func _input(event):
 	if event.is_action_released("RightClick"):
 		follow_cursor = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if follow_cursor and selected:
 		target = get_global_mouse_position()
 		navigation_agent.set_target_position(target)

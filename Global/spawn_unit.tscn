@@ -43,10 +43,10 @@ text = "Строитель
 horizontal_alignment = 1
 
 [node name="Desc1" type="Label" parent="."]
-offset_left = 240.0
-offset_top = 264.0
-offset_right = 472.0
-offset_bottom = 352.0
+offset_left = 248.0
+offset_top = 272.0
+offset_right = 480.0
+offset_bottom = 360.0
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 16
 text = "Может добывать ресурсы, с помощью которых создаются новые юниты"

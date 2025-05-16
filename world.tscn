@@ -34,8 +34,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1904, -686, -1896, 120
 agent_radius = 61.15
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hiqwa"]
-vertices = PackedVector2Array(1140, 19, 2495.74, -622.063, 2487.25, 1154.04, 1045, 261, 1045, 72, 573, 159, 573, 337, 558, 261, 558, 72, 769, 337, 817, 261, 992, 19, 817, 72, 769, 159, 1140, -144, -155, -220, -155, -383, 955, -221, 955, -156, 946, -156, 1103, -144, 1103, -221, -196, -383, -196, -428, -273, -428, -273, -476, -422, -476, -422, -392, -459, -392, -1853.14, -626.93, -459, -229, -438, -229, -438, -108, -369, -108, -369, -70, 946, 6, -220, -70, -220, -220, 992, 6, -115, 392, -182, 392, -182, 378, -331, 540, -306, 540, -306, 592, -158, 592, -158, 555, -115, 555, 330, 72, 330, 261, -1857.85, 1157.95, -331, 378)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 3, 2), PackedInt32Array(11, 0, 4, 12), PackedInt32Array(10, 9, 13, 12), PackedInt32Array(1, 0, 14), PackedInt32Array(15, 16, 17, 18, 19), PackedInt32Array(14, 20, 21, 1), PackedInt32Array(16, 22, 23), PackedInt32Array(23, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 31, 32), PackedInt32Array(32, 33, 34), PackedInt32Array(35, 12, 8, 36, 37, 15, 19), PackedInt32Array(35, 38, 11, 12), PackedInt32Array(39, 40, 41), PackedInt32Array(42, 43, 44), PackedInt32Array(45, 46, 47, 2), PackedInt32Array(13, 5, 8, 12), PackedInt32Array(36, 8, 48), PackedInt32Array(49, 7, 6, 39), PackedInt32Array(9, 2, 47, 39, 6), PackedInt32Array(36, 48, 49, 39, 41), PackedInt32Array(45, 2, 50, 44), PackedInt32Array(44, 50, 29, 42), PackedInt32Array(34, 51, 42, 29, 32), PackedInt32Array(36, 41, 51, 34), PackedInt32Array(30, 32, 29), PackedInt32Array(28, 30, 29), PackedInt32Array(26, 29, 1, 25), PackedInt32Array(25, 1, 21, 17, 23), PackedInt32Array(23, 17, 16)])
+vertices = PackedVector2Array(1140, 19, 2495.74, -622.063, 2487.25, 1154.04, 1045, 261, 1045, 72, 573, 159, 573, 337, 558, 261, 558, 72, 769, 337, 817, 261, 992, 19, 817, 72, 769, 159, 1140, -144, -746, 197, -746, 34, 330, 72, 330, 261, -115, 392, -182, 378, -66, -219, -66, -381, 955, -221, 955, -156, 946, -156, 1103, -144, 1103, -221, -155, -381, -155, -383, -196, -383, -196, -428, -273, -428, -273, -476, -422, -476, -422, -392, -459, -392, -823, -84, -459, -229, -438, -229, -438, -108, -756, -70, -823, -70, -369, -108, -369, -70, -220, -70, -220, -220, -215, -220, -215, -219, 946, 6, 992, 6, -756, 34, -972, 78, -947, 78, -947, 130, -894, 130, -894, 197, -182, 392, -331, 540, -306, 540, -306, 592, -1857.85, 1157.95, -158, 592, -158, 555, -115, 555, -331, 378, -1853.14, -626.93, -972, -84)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 3, 2), PackedInt32Array(11, 0, 4, 12), PackedInt32Array(10, 9, 13, 12), PackedInt32Array(1, 0, 14), PackedInt32Array(15, 16, 17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24, 25), PackedInt32Array(14, 26, 27, 1), PackedInt32Array(22, 28, 29), PackedInt32Array(29, 30, 31), PackedInt32Array(31, 32, 33, 1), PackedInt32Array(34, 35, 36), PackedInt32Array(37, 38, 39, 40, 41, 42), PackedInt32Array(40, 43, 44, 41), PackedInt32Array(45, 46, 47, 48), PackedInt32Array(49, 50, 11, 12), PackedInt32Array(16, 51, 41), PackedInt32Array(52, 53, 54), PackedInt32Array(54, 55, 56), PackedInt32Array(19, 57, 20), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(62, 63, 64, 2), PackedInt32Array(17, 45, 48, 21, 8), PackedInt32Array(21, 25, 49, 12), PackedInt32Array(21, 12, 13, 8), PackedInt32Array(17, 16, 41, 44), PackedInt32Array(13, 5, 8), PackedInt32Array(18, 7, 6, 19), PackedInt32Array(9, 2, 64, 19, 6), PackedInt32Array(62, 2, 61, 60), PackedInt32Array(15, 65, 58, 61, 56), PackedInt32Array(15, 20, 65), PackedInt32Array(56, 61, 66, 54), PackedInt32Array(52, 54, 66), PackedInt32Array(67, 52, 66), PackedInt32Array(22, 29, 31, 1), PackedInt32Array(37, 67, 66, 34, 36), PackedInt32Array(1, 27, 23, 22), PackedInt32Array(66, 1, 33, 34), PackedInt32Array(37, 36, 38), PackedInt32Array(17, 44, 45)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1907, -681, -1912, 1212, 2541, 1208, 2550, -676)])
 agent_radius = 54.0
 
@@ -78,6 +78,12 @@ position = Vector2(-365, 195)
 
 [node name="Enemie2" parent="Units" instance=ExtResource("6_hiqwa")]
 position = Vector2(-1038, 434)
+
+[node name="Enemie3" parent="Units" instance=ExtResource("6_hiqwa")]
+position = Vector2(1810, 168)
+
+[node name="Enemie4" parent="Units" instance=ExtResource("6_hiqwa")]
+position = Vector2(1554, 545)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-93, 207)
@@ -161,6 +167,18 @@ position = Vector2(608, 598)
 
 [node name="Mineral4" parent="NavigationRegion2D2/Objects" instance=ExtResource("4_hkw35")]
 position = Vector2(368, 458)
+
+[node name="Mineral5" parent="NavigationRegion2D2/Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(1977, 79)
+
+[node name="Mineral6" parent="NavigationRegion2D2/Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(1674, 455)
+
+[node name="Mineral7" parent="NavigationRegion2D2/Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(2109, 465)
+
+[node name="Mineral8" parent="NavigationRegion2D2/Objects" instance=ExtResource("4_hkw35")]
+position = Vector2(1869, 325)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="NavigationRegion2D2"]
 navigation_polygon = SubResource("NavigationPolygon_hiqwa")
@@ -332,6 +350,61 @@ position = Vector2(553.5, -191.5)
 texture = ExtResource("12_xcoiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree6"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree16" type="StaticBody2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees"]
+y_sort_enabled = true
+position = Vector2(-363.5, -95)
+
+[node name="Tree1" type="Sprite2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree16"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree16"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree17" type="StaticBody2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees"]
+y_sort_enabled = true
+position = Vector2(-368.5, -147)
+
+[node name="Tree1" type="Sprite2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree17"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree17"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree18" type="StaticBody2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees"]
+y_sort_enabled = true
+position = Vector2(-390, -128.5)
+
+[node name="Tree1" type="Sprite2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree18"]
+texture = ExtResource("11_biudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree18"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k445p")
+
+[node name="Tree19" type="StaticBody2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees"]
+y_sort_enabled = true
+position = Vector2(-405.5, -155.5)
+
+[node name="Tree2" type="Sprite2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree19"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree19"]
+position = Vector2(3.25, 7)
+shape = SubResource("RectangleShape2D_mxdxx")
+
+[node name="Tree20" type="StaticBody2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees"]
+y_sort_enabled = true
+position = Vector2(-27, -304)
+
+[node name="Tree2" type="Sprite2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree20"]
+texture = ExtResource("12_xcoiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D2/NavigationRegion2D/Trees/Tree20"]
 position = Vector2(3.25, 7)
 shape = SubResource("RectangleShape2D_mxdxx")
 

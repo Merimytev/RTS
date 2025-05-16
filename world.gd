@@ -9,6 +9,9 @@ func _process(delta: float) -> void:
 	update_units()
 
 func _ready():
+	await get_tree().process_frame
+	var win_panel = preload("res://UI/WinPanel.tscn").instantiate()
+	add_child(win_panel)
 	get_units()
 
 func get_units():

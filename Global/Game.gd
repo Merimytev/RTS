@@ -1,5 +1,7 @@
 extends Node
 
+signal minerals_changed(new_value: int)
+
 @onready var spawn = preload("res://Global/spawn_unit.tscn")
 
 var Minerals = 0
@@ -11,6 +13,13 @@ func reset_resources():
 	Energy = 0
 	TimePlayed = 0.0
 	print("Ресурсы и время сброшены")
+
+var minerals_send: int:
+	get:
+		return Minerals
+	set(value):
+		Minerals = value
+		minerals_changed.emit(value)
 
 func spawnUnit(position):
 	var path = get_tree().get_root().get_node("World/UI")

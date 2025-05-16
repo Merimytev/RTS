@@ -40,4 +40,5 @@ func startMining():
 	
 func mineralMined():
 	Game.Minerals += 25
+	Game.minerals_send += 25
 	queue_free()
