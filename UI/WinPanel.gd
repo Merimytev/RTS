@@ -18,6 +18,7 @@ func _show_victory() -> void:
 	# Останавливание времени
 	get_tree().paused = true
 	WinPanel.visible = true
+	
 func send_data(minerals, energy, time):
 	if minerals == null or energy == null or time == null:
 		print("Ошибка: Одно или несколько значений пустые")
@@ -58,5 +59,7 @@ func _on_menu_pressed() -> void:
 		print("Отправлены ПУСТЫЕ данные об игре на БД")
 
 	await get_tree().create_timer(0.1).timeout
+	
+	get_tree().paused = false # Снятие игры с паузы
 
 	get_tree().change_scene_to_file("res://MainMenu.tscn")
