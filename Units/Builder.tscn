@@ -34,3 +34,6 @@ offset_bottom = -9.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8pdvx")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.13315, 0.58621, 1.92523e-07, 1)

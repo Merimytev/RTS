@@ -10,7 +10,7 @@ func _ready() -> void:
 	Game.connect("minerals_changed", Callable(self, "_on_minerals_changed"))
 
 func _on_minerals_changed(val:int) -> void:
-	if not _won and val >= 25:
+	if not _won and val >= 75:
 		_won = true
 		_show_victory()
 
