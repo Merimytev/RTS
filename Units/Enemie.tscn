@@ -17,3 +17,12 @@ shape = SubResource("RectangleShape2D_ov13o")
 position = Vector2(0, -31)
 scale = Vector2(1.691, 1.691)
 texture = ExtResource("2_66rb2")
+
+[node name="Healthbar" type="ProgressBar" parent="."]
+modulate = Color(0.0625652, 0.886295, 0.0527636, 1)
+offset_left = -23.0
+offset_top = -61.0
+offset_right = 23.0
+offset_bottom = -53.0
+value = 100.0
+show_percentage = false

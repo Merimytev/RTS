@@ -31,3 +31,4 @@ res://Stats/Stats.gd
 res://Units/Enemy.tscn
 res://Units/Enemy.gd
 res://Units/Soldier.gd
+res://Units/Builder.gd

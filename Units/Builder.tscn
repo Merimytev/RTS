@@ -34,3 +34,16 @@ offset_bottom = -9.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8pdvx")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.13315, 0.58621, 1.92523e-07, 1)
+
+[node name="Healthbar" type="ProgressBar" parent="."]
+modulate = Color(0.0623947, 0.881285, 0.0526105, 1)
+offset_left = -29.0
+offset_top = -64.0
+offset_right = 29.0
+offset_bottom = -53.0
+max_value = 60.0
+value = 60.0
+show_percentage = false
