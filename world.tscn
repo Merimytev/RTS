@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dupgkjwewdblv" path="res://img/MainTile.png" id="3_fa184"]
 [ext_resource type="PackedScene" uid="uid://ch3mbfpk7bfqu" path="res://World objects/Mineral.tscn" id="4_hkw35"]
 [ext_resource type="PackedScene" uid="uid://01hq333aoves" path="res://UI/UI.tscn" id="5_3c34y"]
-[ext_resource type="PackedScene" uid="uid://bndks45jl8sp1" path="res://Units/Enemie.tscn" id="6_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://bndks45jl8sp1" path="res://Units/Enemy.tscn" id="6_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://bf3b4l314uo5" path="res://Buildings/Factory.tscn" id="7_5pqsd"]
 [ext_resource type="PackedScene" uid="uid://bvgpipxsk31dx" path="res://Buildings/SolarPanel.tscn" id="7_gu6r7"]
 [ext_resource type="AudioStream" uid="uid://bdv0sh2ekso8v" path="res://Audio/OSTDynamic.wav" id="9_f3u6j"]

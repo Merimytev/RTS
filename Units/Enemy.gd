@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var HP = 100
 @export var speed = 100
-@export var damage = 10
+@export var damage = 20
 @export var attack_range = 200.0
 @export var detection_range = 300.0
 @export var attack_rate = 1.0

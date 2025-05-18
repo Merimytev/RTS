@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var WinPanel: Panel = $Menu
-@onready var NameInput: TextEdit   = $Menu/PlayerName
+@onready var NameInput: TextEdit = $Menu/PlayerName
 
 var _won: bool = false
 var server_url = "http://127.0.0.1:5000"
@@ -11,7 +11,7 @@ func _ready() -> void:
 	Game.connect("minerals_changed", Callable(self, "_on_minerals_changed"))
 
 func _on_minerals_changed(val:int) -> void:
-	if not _won and val >= 75:
+	if not _won and val >= 100:
 		_won = true
 		_show_victory()
 

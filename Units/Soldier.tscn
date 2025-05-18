@@ -45,8 +45,8 @@ debug_path_custom_color = Color(0.226471, 0.708427, 0.261719, 1)
 [node name="Healthbar" type="ProgressBar" parent="."]
 modulate = Color(0.0565745, 0.743051, 0.0473038, 1)
 offset_left = -29.0
-offset_top = -64.0
+offset_top = -67.0
 offset_right = 30.0
-offset_bottom = -53.0
+offset_bottom = -56.0
 value = 100.0
 show_percentage = false

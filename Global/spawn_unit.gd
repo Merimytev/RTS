@@ -5,7 +5,7 @@ extends Node2D
 
 @export var builder_energy: int = 50
 @export var soldier_energy: int = 10
-@export var soldier_cost: int = 12
+@export var soldier_cost: int = 25
 
 var buildingPos = Vector2(300, 300)
 

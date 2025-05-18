@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://m1e0euuca4eb"]
 
-[ext_resource type="Texture2D" uid="uid://db24iexo82umt" path="res://img/Enemie.png" id="1_eph6f"]
+[ext_resource type="Texture2D" uid="uid://db24iexo82umt" path="res://img/Enemy.png" id="1_eph6f"]
 
 [node name="Enemie" type="Sprite2D"]
 scale = Vector2(1.5, 1.5)

@@ -51,6 +51,8 @@ func _physics_process(_delta):
 
 	if navigation_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
+		navigation_agent.set_target_position(position)
+		# navigation_agent.reset_path()
 	else:
 		var next_path_position = navigation_agent.get_next_path_position()
 		velocity = position.direction_to(next_path_position) * Speed
