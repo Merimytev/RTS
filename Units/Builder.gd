@@ -4,11 +4,13 @@ extends CharacterBody2D
 @onready var box = get_node("Box")
 @onready var Builder = get_node("Builder")
 @onready var navigation_agent = $NavigationAgent2D 
+@onready var health_bar = $Healthbar
 
 @onready var target = position
 var follow_cursor = false
 var Speed = 80
 var HP = 60
+var max_HP = 60  # Максимальное HP для ProgressBar
 var target_queue = []  # Очередь целей
 
 func _ready():
@@ -17,10 +19,12 @@ func _ready():
 	add_to_group("builders", true)
 	navigation_agent.path_desired_distance = 10.0  # Расстояние, на котором путь считается завершённым
 	navigation_agent.target_desired_distance = 10.0  # Расстояние до цели
+	update_health_bar()
 
 func set_selected(value):
 	selected = value
 	box.visible = value
+	health_bar.visible = value
 	
 func _input(event):
 	if event.is_action_pressed("RightClick") and selected:
@@ -64,5 +68,10 @@ func _physics_process(_delta):
 
 func take_damage(damage):
 	HP -= damage
+	update_health_bar()
 	if HP <= 0:
 		queue_free()
+
+func update_health_bar():
+	health_bar.max_value = max_HP
+	health_bar.value = HP

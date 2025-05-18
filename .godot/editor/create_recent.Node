@@ -1,3 +1,4 @@
+ProgressBar
 Label
 CanvasLayer
 NavigationRegion2D
@@ -11,4 +12,3 @@ TileMapLayer
 Timer
 Node2D
 TextureRect
-StaticBody2D

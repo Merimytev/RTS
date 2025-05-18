@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
+@onready var health_bar = $Healthbar
+
 @export var HP = 100
 @export var speed = 100
-@export var damage = 10
+@export var damage = 25
 @export var attack_range = 200.0
 @export var detection_range = 300.0
 @export var attack_rate = 1.0
+@export var max_HP = 100
 
 var target = null
 var can_attack = true
@@ -20,7 +23,8 @@ func _ready():
 	timer.connect("timeout", Callable(self, "_on_attack_timer_timeout"))
 	add_child(timer)
 	timer.name = "AttackTimer"
-
+	update_health_bar()
+	
 func _physics_process(delta):
 	target = find_nearest_unit()
 	
@@ -68,8 +72,13 @@ func attack(unit):
 
 func take_damage(dmg):
 	HP -= dmg
+	update_health_bar()
 	if HP <= 0:
 		queue_free()
 
 func _on_attack_timer_timeout():
 	can_attack = true
+
+func update_health_bar():
+	health_bar.max_value=max_HP
+	health_bar.value = HP

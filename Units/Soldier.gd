@@ -4,9 +4,11 @@ extends CharacterBody2D
 @onready var box = get_node("Box")
 @onready var navigation_agent = $NavigationAgent2D 
 @onready var target = position
+@onready var health_bar = $Healthbar
 var follow_cursor = false
 var Speed = 100
 var HP = 100
+var max_hp = 100
 
 @export var attack_range = 200.0
 @export var fire_rate = 1.0
@@ -27,11 +29,14 @@ func _ready():
 
 	navigation_agent.path_desired_distance = 20.0
 	navigation_agent.target_desired_distance = 10.0
+	update_health_bar()
 	
 func set_selected(value):
 	selected = value
 	box.visible = value
+	health_bar.visible = value
 	print("Soldier ", name, " selected: ", selected)
+	
 
 func _input(event):
 	if event.is_action_pressed("RightClick"):
@@ -90,5 +95,10 @@ func _on_shoot_timer_timeout():
 
 func take_damage(damage):
 	HP -= damage
+	update_health_bar()
 	if HP <= 0:
 		queue_free()
+
+func update_health_bar():
+	health_bar.max_value = max_hp
+	health_bar.value = HP

@@ -7,3 +7,7 @@ res://world.tscn
 res://UI/WinPanel.tscn
 res://UI/UI.tscn
 res://MainMenu.tscn
+res://Units/Builder.gd
+res://World objects/Mineral.tscn
+res://Units/Soldier.gd
+res://Units/Enemie.gd
