@@ -21,7 +21,7 @@ func _ready():
 	add_child(timer)
 	timer.name = "AttackTimer"
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	target = find_nearest_unit()
 	
 	if target and is_instance_valid(target):

@@ -4,7 +4,7 @@ var mouseEntered = false
 @onready var select = get_node("Selected")
 var Selected = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	select.visible = Selected
 
 func _input(event):

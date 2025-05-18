@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6g33e850jyog"]
 
 [ext_resource type="Texture2D" uid="uid://8gaub7jwc4im" path="res://img/Menu.png" id="1_eb5uj"]
-[ext_resource type="Script" path="res://Stats/Stats.gd" id="1_wudi1"]
+[ext_resource type="Script" uid="uid://b1840h2phdtdx" path="res://Stats/Stats.gd" id="1_wudi1"]
 [ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="2_o1310"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx2jq"]
@@ -86,12 +86,12 @@ offset_bottom = 244.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30
-text = "ID игрока:"
+text = "Имя игрока:"
 
-[node name="ID" type="Label" parent="."]
-offset_left = 544.0
+[node name="Name" type="Label" parent="."]
+offset_left = 560.0
 offset_top = 200.0
-offset_right = 640.0
+offset_right = 656.0
 offset_bottom = 244.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
@@ -129,8 +129,8 @@ offset_left = 360.0
 offset_top = 504.0
 offset_right = 793.0
 offset_bottom = 548.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_o1310")
 theme_override_font_sizes/font_size = 30

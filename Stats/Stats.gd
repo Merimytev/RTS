@@ -20,10 +20,10 @@ func _on_request_completed(result: int, response_code: int, headers: Array, body
 			if typeof(data) == TYPE_ARRAY and data.size() > 0:
 				var last_entry = data[data.size() - 1]
 				if typeof(last_entry) == TYPE_DICTIONARY:
-					$ID.text = str(last_entry.get("id", "Нет данных"))
-					$Minerals.text = str(last_entry.get("minerals", "Нет данных"))
-					$Energy.text = str(last_entry.get("energy", "Нет данных"))
-					$Time.text = str(last_entry.get("time_played", "Нет данных")) + " секунд"
+					$Name.text = str(last_entry.get("name_input", "Нет данных"))
+					$Minerals.text = str(int(last_entry.get("minerals", 0)))
+					$Energy.text = str(int(last_entry.get("energy", "Нет данных")))
+					$Time.text = str(int(last_entry.get("time_played", "Нет данных"))) + " секунд"
 				else:
 					print("Ошибка: Ожидался словарь, но элемент массива имеет другой тип.")
 			else:

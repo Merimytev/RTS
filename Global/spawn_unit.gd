@@ -16,6 +16,9 @@ func _on_create_pressed_builder() -> void:
 	if Game.Energy >= builder_energy:
 		var unitPath = get_tree().get_root().get_node("World/Units")
 		var worldPath = get_tree().get_root().get_node("World")
+		var MiniMapPath = get_tree().get_root().get_node("World/UI/MiniMap/SubViewportContainer/SubViewport")
+		MiniMapPath._ready()
+		
 		var unit2 = Builder.instantiate()
 	
 		unit2.position = buildingPos + Vector2(randomPosX, randomPosY)

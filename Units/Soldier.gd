@@ -74,7 +74,7 @@ func get_units_in_area(radius: float):
 	shape.radius = radius
 	query.shape = shape
 	query.transform = Transform2D(0, position)
-	query.collision_mask = 1 << 0 # Убедись, что враги на нужном слое
+	query.collision_mask = 1 << 0 # слой
 
 	var results = space_state.intersect_shape(query)
 	for result in results:

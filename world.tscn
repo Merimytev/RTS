@@ -88,6 +88,7 @@ position = Vector2(1554, 545)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-93, 207)
 stream = SubResource("AudioStreamPlaylist_78cb2")
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 

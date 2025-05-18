@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var MineralsLabel = $Minerals
 @onready var EnergyLabel = $Energy
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	MineralsLabel.text = "Minerals: " + str(Game.Minerals)
 	EnergyLabel.text = "Energy: " + str(Game.Energy)
 

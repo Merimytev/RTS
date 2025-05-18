@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7mr8qt8exscd"]
+
+[ext_resource type="Script" uid="uid://fky0vl65a3ol" path="res://UI/SubViewport.gd" id="1_0xjql"]
+[ext_resource type="Texture2D" uid="uid://dupgkjwewdblv" path="res://img/MainTile.png" id="1_h7lw0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws5dv"]
+bg_color = Color(0.15502, 0.359937, 0.55178, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 8
+border_width_bottom = 8
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 158.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ws5dv")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 292.0
+offset_bottom = 292.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(280, 280)
+render_target_update_mode = 4
+script = ExtResource("1_0xjql")
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+offset_left = -6792.0
+offset_top = -3448.0
+offset_right = 9425.0
+offset_bottom = 4961.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_h7lw0")
+stretch_mode = 1
+
+[node name="Camera" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(230, 150)
+limit_left = -1980
+limit_top = -750
+limit_right = 2600
+limit_bottom = 1300
+
+[node name="Units" type="Node2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(56, 152)

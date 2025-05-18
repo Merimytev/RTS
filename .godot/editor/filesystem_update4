@@ -1,16 +1,33 @@
+res://UI/Minimap Sprites/Factory.tscn
+res://UI/Minimap Sprites/SoldierSprite.tscn
+res://UI/Minimap Sprites/EnemieSprite.tscn
+res://UI/Minimap Sprites/BuilderSprite.tscn
+res://UI/Minimap Sprites/FactorySprite.tscn
+res://UI/Minimap Sprites/Tree1Sprite.tscn
+res://UI/Minimap Sprites/Tree2Sprite.tscn
+res://Units/Enemie.tscn
+res://UI/SubViewport.gd
+res://UI/Minimap Sprites/EnemySprite.tscn
+res://UI/MiniMap.tscn
 res://world.tscn
-res://World objects/Mineral.gd
 res://Global/POP.tscn
 res://Global/spawn_unit.tscn
 res://Units/Builder.tscn
 res://Units/Soldier.tscn
-res://Units/Enemie.tscn
-res://Bullet/bullet.tscn
+res://UI/WinPanel.tscn
 res://MainMenu.tscn
 res://UI/UI.tscn
-res://UI/WinPanel.tscn
-res://UI/WinPanel.gd
+res://UI/Minimap Sprites/MineralSprite.tscn
+res://Global/spawn_unit.gd
+res://UI/Camera.gd
+res://Buildings/Factory.gd
+res://Buildings/SolarPanel.gd
 res://UI/UI.gd
+res://World objects/Mineral.gd
+res://Units/Enemie.gd
+res://UI/WinPanel.gd
+res://Stats/Stats.tscn
+res://Stats/Stats.gd
+res://Units/Enemy.tscn
+res://Units/Enemy.gd
 res://Units/Soldier.gd
-res://Units/Builder.gd
-res://MainMenu.gd

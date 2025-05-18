@@ -14,7 +14,7 @@ func _ready() -> void:
 	timer.start()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if currTime <= 10:
 		energyCollected()
 

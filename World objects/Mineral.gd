@@ -12,7 +12,7 @@ func _ready():
 	bar.max_value = totalTime
 
 
-func _process(delta):
+func _process(_delta):
 	bar.value = currTime
 	if currTime <= 0:
 		mineralMined()
