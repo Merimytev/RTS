@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cvh6eqa7tmf5d"]
+
+[ext_resource type="Script" uid="uid://c47h7xdw8rakt" path="res://build_panel.gd" id="1_eml3h"]
+[ext_resource type="Texture2D" uid="uid://b2qe7mfhsthni" path="res://img/FactoryBlue.png" id="2_7whta"]
+[ext_resource type="Texture2D" uid="uid://cf8jgcmh3a613" path="res://img/Tree1.png" id="3_mgl7e"]
+
+[node name="BuildPanel" type="CanvasLayer" unique_id=725757801]
+script = ExtResource("1_eml3h")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=75466490]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=2084818300]
+layout_mode = 2
+
+[node name="FactorySlot" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=100552966]
+layout_mode = 2
+
+[node name="FactoryButton" type="TextureButton" parent="PanelContainer/HBoxContainer/FactorySlot" unique_id=1618547117]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("2_7whta")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/FactorySlot" unique_id=1257612556]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/HBoxContainer/FactorySlot/HBoxContainer" unique_id=1038789439]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer/FactorySlot" unique_id=860263984]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/HBoxContainer/FactorySlot/HBoxContainer2" unique_id=603925494]
+layout_mode = 2
+
+[node name="TurretSlot" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=145051904]
+layout_mode = 2
+
+[node name="TurretButton" type="TextureButton" parent="PanelContainer/HBoxContainer/TurretSlot" unique_id=148782183]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("3_mgl7e")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer/TurretSlot" unique_id=1296463401]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/HBoxContainer/TurretSlot/HBoxContainer2" unique_id=1636602746]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/TurretSlot" unique_id=1649557328]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/HBoxContainer/TurretSlot/HBoxContainer" unique_id=459313930]
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/FactorySlot/FactoryButton" to="." method="_on_factory_button_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/TurretSlot/TurretButton" to="." method="_on_turret_button_pressed"]

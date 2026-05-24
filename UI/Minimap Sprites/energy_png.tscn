@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dspiynj1g7r8r"]
+
+[ext_resource type="Texture2D" uid="uid://83sphaxq5hdn" path="res://img/Energy.png" id="1_vvs4u"]
+
+[node name="EnergyPNG" type="Sprite2D" unique_id=2147055597]
+scale = Vector2(0.0476074, 0.0476074)
+texture = ExtResource("1_vvs4u")

@@ -1,0 +1,22 @@
+# --- Godot 4+ специфические файлы ---
+.godot/            # Рабочая директория Godot Editor (Кэш движка)
+*.import           # Файлы импорта ассетов
+.import/           # Папка с импортированными ассетами
+
+# --- Конфиги экспорта ---
+export.cfg
+export_presets.cfg
+
+# --- Сгенерированные файлы SQLite или плагинов ---
+addons/**/bin/     # Бинарные файлы Godot-плагинов
+*.dll              # DLL-библиотеки (Windows)
+*.so               # Linux .so
+*.dylib            # macOS .dylib
+
+# --- Переводы ---
+*.translation      # Генерируются автоматически из CSV
+
+# --- Mono ---
+.mono/
+data_*/
+mono_crash.*.json

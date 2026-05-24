@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://p3snma5hv5o2"]
+
+[ext_resource type="Script" uid="uid://cryjgl53emtq7" path="res://Units/Builder.gd" id="1_2gm1g"]
+[ext_resource type="PackedScene" uid="uid://cvh6eqa7tmf5d" path="res://build_panel.tscn" id="2_1mp60"]
+[ext_resource type="Texture2D" uid="uid://ba4xo2wc3tc1h" path="res://img/Builder.png" id="2_2y3vx"]
+[ext_resource type="PackedScene" uid="uid://bq6bnx6y0f7bj" path="res://build_preview.tscn" id="3_fidy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov13o"]
+size = Vector2(42, 42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pdvx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.2514e-06, 0.714743, 0.68394, 1)
+border_blend = true
+
+[node name="Builder" type="CharacterBody2D" unique_id=1741133992]
+script = ExtResource("1_2gm1g")
+build_panel_scene = ExtResource("2_1mp60")
+build_preview_scene = ExtResource("3_fidy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=680705600]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ov13o")
+
+[node name="Builder" type="Sprite2D" parent="." unique_id=1878439132]
+texture = ExtResource("2_2y3vx")
+
+[node name="Box" type="Panel" parent="." unique_id=1299892354]
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 22.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pdvx")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1748953542]
+target_desired_distance = 50.0
+path_max_distance = 10.0
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.13315, 0.58621, 1.92523e-07, 1)
+
+[node name="Healthbar" type="ProgressBar" parent="." unique_id=1872201097]
+modulate = Color(0.0623947, 0.881285, 0.0526105, 1)
+offset_left = -29.0
+offset_top = -32.0
+offset_right = 29.0
+offset_bottom = -21.0
+max_value = 60.0
+value = 60.0
+show_percentage = false

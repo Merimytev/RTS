@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bq6bnx6y0f7bj"]
+
+[ext_resource type="Script" uid="uid://ib7nwdia6ht6" path="res://build_preview.gd" id="1_db443"]
+[ext_resource type="PackedScene" uid="uid://bf3b4l314uo5" path="res://Buildings/Factory.tscn" id="2_ffis0"]
+[ext_resource type="Texture2D" uid="uid://b2qe7mfhsthni" path="res://img/FactoryBlue.png" id="3_cbbdn"]
+[ext_resource type="PackedScene" uid="uid://bvgpipxsk31dx" path="res://Buildings/SolarPanel.tscn" id="3_ffis0"]
+
+[node name="build_preview" type="Node2D" unique_id=923004103]
+script = ExtResource("1_db443")
+factory_scene = ExtResource("2_ffis0")
+turret_scene = ExtResource("3_ffis0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1360611532]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1775243899]
+texture = ExtResource("3_cbbdn")
+
+[node name="CollisionCheck" type="Area2D" parent="." unique_id=108482145]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionCheck" unique_id=337149063]

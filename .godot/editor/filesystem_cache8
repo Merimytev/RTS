@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1737179190
+icon.svg::CompressedTexture2D::8027848690110759612::1737179190::1737179227::1::::<><>::
+RTS.tres::MeshLibrary::6233810554431338577::1736387475::0::1::::<><>::
+world.gd::GDScript::-1::1737179190::0::1::::<>Node2D<>::
+world.tscn::PackedScene::5607982408873306033::1737177928::0::1::::<><>::res://world.gd<>res://UI/Camera.gd<>uid://dgwblxbp3q4pv::::res://img/River2.png<>uid://p3snma5hv5o2::::res://Unit/Unit.tscn<>uid://j77p2nlw752i::::res://img/River1.png<>uid://dupgkjwewdblv::::res://img/MainTile.png<>uid://ch3mbfpk7bfqu::::res://World objects/Mineral.tscn<>uid://01hq333aoves::::res://UI/UI.tscn<>uid://bf3b4l314uo5::::res://Buildings/Factory.tscn<>uid://bvgpipxsk31dx::::res://Buildings/SolarPanel.tscn<>uid://bdv0sh2ekso8v::::res://Audio/OSTDynamic.wav<>uid://cewmalrtas051::::res://Audio/OSTAmbient.wav<>uid://cf8jgcmh3a613::::res://img/Tree1.png<>uid://c5p3kc83yhxy2::::res://img/Tree2.png
+::res://addons/::1736941289
+::res://addons/godot-sqlite/::1737179190
+::res://addons/godot-sqlite/bin/::1737179190
+::res://UI/::1737179190
+Camera.gd::GDScript::-1::1737179190::0::1::::<>Camera2D<>::
+scifiUnit_11.png::CompressedTexture2D::2447710582754321051::1737179190::1737179227::1::::<><>::
+UI.tscn::PackedScene::1808850019389301598::1737178812::0::1::::<><>::res://UI/UI.gd<>uid://83sphaxq5hdn::::res://img/Energy.png<>uid://vhkpsdkaih5p::::res://img/Mineral.png<>uid://dvn073b5o2dwm::::res://img/fonts/Orbit-Regular.ttf
+::res://Unit/::1737179190
+unit.gd::GDScript::-1::1737179190::0::1::::<>CharacterBody2D<>::
+Unit.tscn::PackedScene::1111751984528198855::1737179190::0::1::::<><>::uid://ba4xo2wc3tc1h::::res://img/Builder.png<>res://Unit/unit.gd

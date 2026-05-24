@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dv13ew4tmmp7j"]
+
+[ext_resource type="Script" uid="uid://pq4d50rnbj7p" path="res://static_body_2d.gd" id="1_ypqmy"]
+[ext_resource type="Texture2D" uid="uid://dr01wf8ctg6dg" path="res://img/EnemyBase.png" id="2_dyby8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r4uk"]
+size = Vector2(136, 132.25)
+
+[node name="EnemyBase" type="StaticBody2D" unique_id=74305502]
+script = ExtResource("1_ypqmy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1650167061]
+position = Vector2(0, -0.5)
+scale = Vector2(1, 1.0078125)
+texture = ExtResource("2_dyby8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=236558653]
+shape = SubResource("RectangleShape2D_7r4uk")
+one_way_collision = true
+one_way_collision_margin = 0.0
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=178003208]
