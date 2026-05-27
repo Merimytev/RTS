@@ -19,20 +19,20 @@ func _ready():
 
 func _process(_delta):
 	bar.value = current_minerals
-	
+
 	# Чистим рабочих которые ушли слишком далеко
 	var active_units = []
 	for u in mining_units:
 		if is_instance_valid(u):
 			var dist = global_position.distance_to(u.global_position)
-			if dist < 80.0:
+			if dist < 130.0:
 				active_units.append(u)
 			else:
 				# Юнит ушёл — останавливаем его добычу
 				if u.has_method("on_mineral_depleted"):
 					u.on_mineral_depleted()
 	mining_units = active_units
-	
+
 	if mining_units.is_empty() and not timer.is_stopped():
 		timer.stop()
 

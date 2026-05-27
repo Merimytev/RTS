@@ -4,16 +4,16 @@ extends StaticBody2D
 @export var spawn_delay: float = 5.0
 
 var is_hovered := false
-@onready var select = $Selected
-var Selected := false
+var is_selected := false
 var health := max_health
-
 var health_bar: ProgressBar = null
 var spawn_bar: ProgressBar = null
 var is_spawning := false
 var elapsed := 0.0
 var pending_scene: PackedScene = null
 var spawn_position_offset := Vector2(0, 60)
+
+@onready var select = $Selected
 
 func _ready() -> void:
 	health = max_health
@@ -32,14 +32,13 @@ func _create_health_bar() -> void:
 	health_bar.visible = false
 
 func _process(delta: float) -> void:
-	select.visible = Selected
+	select.visible = is_selected
 
 	if not is_spawning:
 		return
 
 	elapsed += delta
 
-	# Обновляем прогресс-бар спавна
 	if is_instance_valid(spawn_bar):
 		var screen_pos = get_viewport().get_canvas_transform() * global_position
 		spawn_bar.position = screen_pos + Vector2(-30, -60)
@@ -55,7 +54,6 @@ func start_spawn(scene: PackedScene) -> void:
 	is_spawning = true
 	elapsed = 0.0
 
-	# Прогресс-бар спавна в UI
 	spawn_bar = ProgressBar.new()
 	spawn_bar.max_value = spawn_delay
 	spawn_bar.value = 0
@@ -86,12 +84,31 @@ func _finish_spawn() -> void:
 	get_tree().get_root().get_node("World").get_units()
 	print("Юнит создан!")
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("LeftClick"):
 		if is_hovered:
-			Selected = !Selected
-			if Selected:
+			if is_selected:
+				is_selected = false
+				_close_spawn_menu()
+			else:
+				_deselect_all_buildings()
+				_close_spawn_menu()
+				is_selected = true
 				Game.spawnUnit(global_position)
+
+func _deselect_all_buildings() -> void:
+	for building in get_tree().get_nodes_in_group("player_units"):
+		if building != self and building.get("is_selected") == true:
+			building.is_selected = false
+
+func _close_spawn_menu() -> void:
+	var ui = get_tree().get_root().get_node_or_null("World/UI")
+	if not ui:
+		return
+	for child in ui.get_children():
+		if "spawn_unit" in child.name.to_lower() or "SpawnUnit" in child.name:
+			child.free()
+			return
 
 func _on_factory_building_mouse_entered() -> void:
 	is_hovered = true

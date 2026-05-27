@@ -9,15 +9,15 @@ extends CharacterBody2D
 @export var damage := 25.0
 @export var bullet_scene: PackedScene
 
-# ═══ Узлы ════════════════════════════════════════════════════════
-@onready var box = $Box
-@onready var health_bar = $Healthbar
-@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-
 # ═══ Состояние ═══════════════════════════════════════════════════
 var hp := max_hp
 var can_shoot := true
 var target_queue: Array = []
+
+# ═══ Узлы ════════════════════════════════════════════════════════
+@onready var box = $Box
+@onready var health_bar = $Healthbar
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 # ─── Инициализация ────────────────────────────────────────────────
 
@@ -47,10 +47,6 @@ func _ready():
 func set_selected(value: bool) -> void:
 	selected = value
 	box.visible = value
-	health_bar.visible = value
-
-
-
 
 # ─── Физика ───────────────────────────────────────────────────────
 
@@ -62,7 +58,7 @@ func _update_movement() -> void:
 	if nav_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		if target_queue.size() > 0:
-			target_queue.pop_front()  # ← удаляем только после достижения
+			target_queue.pop_front()
 			if target_queue.size() > 0:
 				_go_to_next_target()
 		return
@@ -75,14 +71,9 @@ func _update_movement() -> void:
 		nav_agent.set_velocity(velocity)
 
 func _go_to_next_target() -> void:
-	
 	if target_queue.size() == 0:
 		return
-	var next = target_queue[0]  # ← front без pop
-	nav_agent.set_target_position(next)
-
-	
-
+	nav_agent.set_target_position(target_queue[0])
 
 func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
@@ -127,8 +118,8 @@ func _get_enemies_in_range(radius: float) -> Array:
 		if is_instance_valid(collider) and collider.is_in_group("enemies"):
 			enemies.append(collider)
 	enemies.sort_custom(func(a, b):
-		return global_position.distance_squared_to(a.global_position) 
-		global_position.distance_squared_to(b.global_position)
+		return global_position.distance_squared_to(a.global_position) \
+			< global_position.distance_squared_to(b.global_position)
 	)
 	return enemies
 
@@ -147,5 +138,4 @@ func take_damage(amount: float) -> void:
 
 func update_health_bar() -> void:
 	health_bar.max_value = max_hp
-	
 	health_bar.value = hp

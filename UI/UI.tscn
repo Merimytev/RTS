@@ -109,9 +109,9 @@ text = "Выйти"
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
-offset_top = -164.0
+offset_top = -228.0
 offset_right = 0.0
-offset_bottom = -164.0
+offset_bottom = -228.0
 grow_horizontal = 1
 grow_vertical = 0
 
@@ -124,11 +124,5 @@ offset_bottom = 23.0
 grow_horizontal = 0
 text = "Цель: Уничтожить базу противника
 "
-
-[node name="Button" type="Button" parent="." unique_id=739259971]
-offset_left = 169.0
-offset_top = 537.0
-offset_right = 219.0
-offset_bottom = 618.0
 
 [connection signal="pressed" from="Menu/Menu" to="." method="_on_menu_pressed"]

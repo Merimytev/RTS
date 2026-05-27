@@ -26,10 +26,10 @@ grow_vertical = 2
 
 [node name="BG" type="Panel" parent="." unique_id=1433696964]
 layout_mode = 0
-offset_left = 8.5
-offset_top = 7.0
-offset_right = 158.5
-offset_bottom = 157.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 220.0
+offset_bottom = 220.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ws5dv")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1860462360]
@@ -37,15 +37,15 @@ clip_contents = true
 layout_mode = 0
 offset_left = 12.0
 offset_top = 12.0
-offset_right = 292.0
-offset_bottom = 292.0
+offset_right = 412.0
+offset_bottom = 412.0
 scale = Vector2(0.5, 0.5)
 stretch = true
 metadata/_edit_lock_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=195736748]
 handle_input_locally = false
-size = Vector2i(280, 280)
+size = Vector2i(400, 400)
 render_target_update_mode = 4
 script = ExtResource("1_0xjql")
 

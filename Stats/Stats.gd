@@ -1,38 +1,46 @@
-extends Node2D
+extends CanvasLayer
 
 var server_url = "http://127.0.0.1:5000"
 
+@onready var name_label: Label = $Panel/VBoxContainer/NameLabel
+@onready var minerals_label: Label = $Panel/VBoxContainer/MineralsLabel
+@onready var energy_label: Label = $Panel/VBoxContainer/EnergyLabel
+@onready var time_label: Label = $Panel/VBoxContainer/TimeLabel
+@onready var killed_label: Label = $Panel/VBoxContainer/KilledLabel
+
 func _ready() -> void:
+	if not Game.selected_player.is_empty():
+		_fill(Game.selected_player)
+		return
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request(server_url + "/get_statistics")
-	http_request.connect("request_completed", Callable(self, "_on_request_completed"))
+	http_request.request_completed.connect(_on_request_completed)
 
-func _on_request_completed(result: int, response_code: int, headers: Array, body: PackedByteArray) -> void:
-	if response_code == 200:
-		var response = body.get_string_from_utf8()
-		print("Response: ", response)
-		var json_parser = JSON.new()
-		var json_result = json_parser.parse(response)
-		
-		if json_result == OK:
-			var data = json_parser.data
-			if typeof(data) == TYPE_ARRAY and data.size() > 0:
-				var last_entry = data[data.size() - 1]
-				if typeof(last_entry) == TYPE_DICTIONARY:
-					$Name.text = str(last_entry.get("name_input", "Нет данных"))
-					$Minerals.text = str(int(last_entry.get("minerals", 0)))
-					$Energy.text = str(int(last_entry.get("energy", "Нет данных")))
-					$Time.text = str(int(last_entry.get("time_played", "Нет данных"))) + " секунд"
-				else:
-					print("Ошибка: Ожидался словарь, но элемент массива имеет другой тип.")
-			else:
-				print("Ошибка: Получен пустой массив или неподходящий тип данных.")
-		else:
-			print("Ошибка парсинга JSON: ", json_parser.error_message)
-	else:
+func _on_request_completed(
+		_result: int, response_code: int, _headers: Array, body: PackedByteArray
+) -> void:
+	if response_code != 200:
 		print("HTTP ошибка: ", response_code)
+		return
+	var json_parser := JSON.new()
+	if json_parser.parse(body.get_string_from_utf8()) != OK:
+		print("Ошибка парсинга JSON: ", json_parser.error_message)
+		return
+	var data = json_parser.data
+	if typeof(data) != TYPE_ARRAY or data.is_empty():
+		return
+	var entry = data[data.size() - 1]
+	if typeof(entry) != TYPE_DICTIONARY:
+		return
+	_fill(entry)
 
+func _fill(entry: Dictionary) -> void:
+	name_label.text     += " " + str(entry.get("name_input", "—"))
+	minerals_label.text += " " + str(int(entry.get("minerals", 0)))
+	energy_label.text   += " " + str(int(entry.get("energy", 0)))
+	time_label.text     += " " + str(int(entry.get("time_played", 0))) + " сек"
+	killed_label.text   += " " + str(int(entry.get("killed", 0))) + " врагов"
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Stats/PlayersList.tscn")

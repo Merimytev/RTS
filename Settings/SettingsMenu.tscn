@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://cjyycguhs0sjl"]
+
+[ext_resource type="Script" uid="uid://clpb7boewbpk4" path="res://Settings/SettingsMenu.gd" id="1_bvi2v"]
+[ext_resource type="FontFile" uid="uid://dvn073b5o2dwm" path="res://img/fonts/Orbit-Regular.ttf" id="3_441ya"]
+[ext_resource type="Script" uid="uid://dfnoug38wfcdd" path="res://VolumeSlider.gd" id="4_6ih2q"]
+
+[sub_resource type="StyleBoxFlat" id="panel_sbox"]
+content_margin_left = 28.0
+content_margin_top = 24.0
+content_margin_right = 28.0
+content_margin_bottom = 24.0
+bg_color = Color(0.055, 0.065, 0.1, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22, 0.38, 0.65, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="btn_normal"]
+bg_color = Color(0.09, 0.12, 0.2, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.42, 0.68, 0.8)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="btn_pressed"]
+bg_color = Color(0.06, 0.08, 0.14, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.55, 0.9, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="btn_hover"]
+bg_color = Color(0.15, 0.21, 0.36, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.72, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="btn_focus"]
+
+[node name="SettingsMenu" type="CanvasLayer" unique_id=730561020]
+script = ExtResource("1_bvi2v")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=1101385634]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.1, 0.88)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1547999791]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("panel_sbox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=663313952]
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer" unique_id=1306953786]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.2, 0.4, 0.9)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 60
+text = "Настройки"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSep" type="HSeparator" parent="Panel/VBoxContainer" unique_id=1407324209]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="AspectLabel" type="Label" parent="Panel/VBoxContainer" unique_id=644596352]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.85, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 34
+text = "Соотношение сторон"
+
+[node name="AspectRatioOption" type="OptionButton" parent="Panel/VBoxContainer" unique_id=1022751266]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 18
+
+[node name="ResolutionLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1740495537]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.85, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 34
+text = "Разрешение"
+
+[node name="ResolutionOption" type="OptionButton" parent="Panel/VBoxContainer" unique_id=17903124]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 18
+
+[node name="FullscreenCheck" type="CheckBox" parent="Panel/VBoxContainer" unique_id=852497482]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 34
+text = "Полноэкранный режим"
+
+[node name="Volume" type="Label" parent="Panel/VBoxContainer" unique_id=1767699835]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.85, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 34
+text = "Громкость музыки"
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer" unique_id=1220822222]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("4_6ih2q")
+bus_name = "Music"
+
+[node name="HSep2" type="HSeparator" parent="Panel/VBoxContainer" unique_id=2026431945]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ButtonsRow" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1237914372]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Back" type="Button" parent="Panel/VBoxContainer/ButtonsRow" unique_id=1904904498]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/pressed = SubResource("btn_pressed")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_styles/focus = SubResource("btn_focus")
+text = "Назад"
+
+[node name="Apply" type="Button" parent="Panel/VBoxContainer/ButtonsRow" unique_id=508569723]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_441ya")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("btn_normal")
+theme_override_styles/pressed = SubResource("btn_pressed")
+theme_override_styles/hover = SubResource("btn_hover")
+theme_override_styles/focus = SubResource("btn_focus")
+text = "Применить"
+
+[connection signal="item_selected" from="Panel/VBoxContainer/AspectRatioOption" to="." method="_on_aspect_ratio_selected"]
+[connection signal="item_selected" from="Panel/VBoxContainer/ResolutionOption" to="." method="_on_resolution_selected"]
+[connection signal="toggled" from="Panel/VBoxContainer/FullscreenCheck" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonsRow/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonsRow/Apply" to="." method="_on_apply_pressed"]

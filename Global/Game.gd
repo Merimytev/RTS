@@ -9,11 +9,14 @@ var Minerals = 0
 var Energy = 0
 var TimePlayed = 0.0
 var units = []
+var selected_player: Dictionary = {}
+var killed_count: int = 0
 
 func reset_resources():
 	Minerals = 0
 	Energy = 0
 	TimePlayed = 0.0
+	killed_count = 0
 	print("Ресурсы и время сброшены")
 
 var minerals_send: int:

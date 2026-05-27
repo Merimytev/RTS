@@ -1,10 +1,5 @@
 extends Node2D
 
-var building_type := ""
-var can_place := true
-var builder_ref: Node = null
-var is_placing := false
-
 @export var factory_scene: PackedScene
 @export var turret_scene: PackedScene
 @export var factory_cost_minerals := 50
@@ -13,13 +8,17 @@ var is_placing := false
 @export var turret_cost_energy := 20
 @export var build_time := 5.0
 
-@onready var sprite = $Sprite2D
-@onready var check_area = $CollisionCheck
-
+var building_type := ""
+var can_place := true
+var builder_ref: Node = null
+var is_placing := false
 var build_position := Vector2.ZERO
 var pending_scene: PackedScene = null
 var pending_mineral_cost := 0
 var pending_energy_cost := 0
+
+@onready var sprite = $Sprite2D
+@onready var check_area = $CollisionCheck
 
 func _ready():
 	sprite.modulate = Color(1, 1, 1, 0.5)
@@ -27,6 +26,30 @@ func _ready():
 func setup(type: String, builder: Node) -> void:
 	building_type = type
 	builder_ref = builder
+
+	# Match preview sprite to actual building texture and scale
+	var inner: Sprite2D = sprite.get_child(0) as Sprite2D
+	if inner:
+		match type:
+			"factory":
+				inner.texture = load("res://img/FactoryBlue.png")
+				inner.position = Vector2.ZERO
+			"turret":
+				inner.texture = load("res://img/SolarPanel.png")
+				inner.position = Vector2(0, -15)
+	# Both buildings use scale=2 on their root — match that here
+	sprite.scale = Vector2(2.0, 2.0)
+
+	# Set collision shape to match building footprint (shape_size × building_scale)
+	var cs := check_area.get_node_or_null("CollisionShape2D") as CollisionShape2D
+	if cs:
+		var rect := RectangleShape2D.new()
+		match type:
+			"factory":
+				rect.size = Vector2(60.0, 40.5) * 2.0
+			"turret":
+				rect.size = Vector2(44.0, 35.0) * 2.0
+		cs.shape = rect
 
 func _process(_delta):
 	if is_placing:
@@ -97,7 +120,9 @@ func _start_construction() -> void:
 	print("_start_construction вызван!")
 
 	var ghost = pending_scene.instantiate()
-	get_tree().get_root().get_node("World/NavigationRegion2D2/NavigationRegion2D/Buildings").add_child(ghost)
+	var buildings_node = get_tree().get_root().get_node(
+		"World/NavigationRegion2D2/NavigationRegion2D/Buildings")
+	buildings_node.add_child(ghost)
 	ghost.global_position = build_position
 	ghost.modulate = Color(1, 1, 1, 0.4)
 
@@ -120,12 +145,19 @@ func _start_construction() -> void:
 	get_tree().root.add_child(build_timer)
 	build_timer.start()
 
+	var captured_builder := builder_ref
+	var exit_point := build_position + Vector2(0, 80)
+
 	build_timer.timeout.connect(func():
 		print("тик!")
 		var done = controller.tick()
 		if done:
 			build_timer.queue_free()
 			print("Здание построено!")
+			if is_instance_valid(captured_builder):
+				captured_builder.target_queue.clear()
+				captured_builder.target_queue.append(exit_point)
+				captured_builder._go_to_next_target()
 	)
 
 	call_deferred("queue_free")

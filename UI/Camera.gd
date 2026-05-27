@@ -1,5 +1,7 @@
 extends Camera2D
 
+const BOTTOM_BAR_HEIGHT := 165
+
 #Camera Control
 @export var CAMERA_SPEED = 30.0
 @export var ZOOM_SPEED = 20.0
@@ -29,6 +31,10 @@ func _ready():
 	connect("area_selected", Callable(get_parent(), "_on_area_selected"))
 	connect("single_click", Callable(get_parent(), "_on_single_click"))
 
+func _is_over_ui() -> bool:
+	var mouse_y := get_viewport().get_mouse_position().y
+	return mouse_y > get_viewport().get_visible_rect().size.y - BOTTOM_BAR_HEIGHT
+
 func _process(delta):
 	
 	var inputX = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -50,18 +56,18 @@ func _process(delta):
 	if not zooming:
 		zoomFactor = 1.0
 	
-	if Input.is_action_just_pressed("LeftClick"):
+	if Input.is_action_just_pressed("LeftClick") and not _is_over_ui():
 		start = mousePosGlobal
 		startV = mousePos
 		isDragging = true
-		is_additive_selection = Input.is_action_pressed("Shift")  # Проверка Shift через InputMap
-			
+		is_additive_selection = Input.is_action_pressed("Shift")
+
 	if isDragging:
 		end = mousePosGlobal
 		endV = mousePos
 		draw_area()
-	
-	if Input.is_action_just_released("LeftClick"):
+
+	if Input.is_action_just_released("LeftClick") and isDragging:
 		if startV.distance_to(mousePos) > 20:
 			end = mousePosGlobal
 			endV = mousePos

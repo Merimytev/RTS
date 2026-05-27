@@ -1,18 +1,26 @@
-extends Node2D
+extends CanvasLayer
 
+const FONT_PATH := "res://img/fonts/Orbit-Regular.ttf"
+const BG_PATH := "res://img/Menu.png"
 
-func _on_play_pressed() -> void:
+func _on_play_button_pressed() -> void:
 	Game.reset_resources()
 	get_tree().change_scene_to_file("res://world.tscn")
 
+func _on_load_button_pressed() -> void:
+	pass # Replace with function body.
 
-func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://SettingsMenu.tscn")
+func _on_network_button_pressed() -> void:
+	pass # Replace with function body.
+	
+func _on_stats_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Stats/PlayersList.tscn")
 
+func _on_settings_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Settings/SettingsMenu.tscn")
 
-func _on_statistics_pressed() -> void:
-	get_tree().change_scene_to_file("res://Stats/Stats.tscn")
-
-
-func _on_quit_pressed() -> void:
+func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+func _on_about_button_pressed() -> void:
+	pass # Replace with function body.

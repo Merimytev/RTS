@@ -19,8 +19,7 @@ func get_units():
 func update_units():
 	units = units.filter(func(unit): return is_instance_valid(unit))
 
-func _input(event):
-	
+func _unhandled_input(event):
 	if event.is_action_pressed("RightClick"):
 		var mouse_pos = get_global_mouse_position()
 		if Input.is_key_pressed(KEY_SHIFT):
@@ -50,11 +49,9 @@ func _on_right_click(click_position: Vector2) -> void:
 	var positions = _get_formation_positions(click_position, selected_units.size())
 	for i in range(selected_units.size()):
 		var unit = selected_units[i]
-		
 		if unit.get("target_queue") != null:
 			unit.target_queue.clear()
 			unit.target_queue.append(positions[i])
-			
 			unit._go_to_next_target()
 
 func _get_formation_positions(center: Vector2, count: int) -> Array:
